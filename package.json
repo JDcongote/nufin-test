@@ -1,0 +1,23 @@
+{
+  "name": "nufintest",
+  "version": "1.0.0",
+  "description": "Take-home test for Nufin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JDcongote/nufin-test.git"
+  },
+  "author": "Juan Diego Congote",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JDcongote/nufin-test/issues"
+  },
+  "homepage": "https://github.com/JDcongote/nufin-test#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
