@@ -1,0 +1,2 @@
+https://api.collegefootballdata.com/teams?conference=sec
+https://api.collegefootballdata.com/conferences
