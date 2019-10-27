@@ -1,0 +1,50 @@
+@import '../../styles/variables/index';
+
+.team-item {
+    width: 100vw;
+    max-width: 100%;
+    padding: 8px;
+    margin: 20px 0px;
+    background-color: var(--color--background-card);
+
+    &__header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .school-name {
+            font-family: JackportCollege;
+            letter-spacing: 0.2em;
+            font-size: 20px;
+            font-weight: 100;
+        }
+
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .logo {
+            width: 20%;
+            display: flex;
+
+            &-image {
+                object-fit: contain;
+                width: 100%;
+                align-self: center;
+                box-sizing: border-box;
+            }
+        }
+
+        .detail {
+            min-width: 60%;
+            padding: 10px;
+        }
+    }
+
+    &__footer {
+        width: 100%;
+    }
+}

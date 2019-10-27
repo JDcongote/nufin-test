@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Kids League 1",
+    "shortName": "K1",
+    "abbreviation": "KL1"
+  },
+  {
+    "id": 2,
+    "name": "Ultra League 1",
+    "shortName": "U1",
+    "abbreviation": "UL1"
+  },
+  {
+    "id": 3,
+    "name": "Super League 1",
+    "shortName": "S1",
+    "abbreviation": "SL1"
+  },
+  {
+    "id": 4,
+    "name": "Big League 2",
+    "shortName": "B2",
+    "abbreviation": "BL2"
+  },
+  {
+    "id": 5,
+    "name": "Core League 2",
+    "shortName": "C2",
+    "abbreviation": "CL2"
+  },
+  {
+    "id": 6,
+    "name": "Mega League 2",
+    "shortName": "M2",
+    "abbreviation": "ML2"
+  },
+  {
+    "id": 7,
+    "name": "Big League 1",
+    "shortName": "B1",
+    "abbreviation": "BL1"
+  },
+  {
+    "id": 8,
+    "name": "Kids League 2",
+    "shortName": "K2",
+    "abbreviation": "KL2"
+  },
+  {
+    "id": 9,
+    "name": "Ultra League 3",
+    "shortName": "U3",
+    "abbreviation": "UL3"
+  },
+  {
+    "id": 10,
+    "name": "Super League 3",
+    "shortName": "S3",
+    "abbreviation": "SL3"
+  },
+  {
+    "id": 11,
+    "name": "Mega League 3",
+    "shortName": "M3",
+    "abbreviation": "ML3"
+  },
+  {
+    "id": 12,
+    "name": "Core League 3",
+    "shortName": "C3",
+    "abbreviation": "CL3"
+  },
+  {
+    "id": 13,
+    "name": "Ultra League 4",
+    "shortName": "U4",
+    "abbreviation": "UL4"
+  },
+  {
+    "id": 14,
+    "name": "Ultra League 2",
+    "shortName": "U2",
+    "abbreviation": "UL2"
+  },
+  {
+    "id": 15,
+    "name": "Big League 4",
+    "shortName": "B4",
+    "abbreviation": "BL4"
+  },
+  {
+    "id": 16,
+    "name": "Big League 3",
+    "shortName": "B3",
+    "abbreviation": "BL3"
+  },
+  {
+    "id": 17,
+    "name": "Mega League 1",
+    "shortName": "M1",
+    "abbreviation": "ML1"
+  },
+  {
+    "id": 18,
+    "name": "Core League 4",
+    "shortName": "C4",
+    "abbreviation": "CL4"
+  },
+  {
+    "id": 19,
+    "name": "Core League 5",
+    "shortName": "C5",
+    "abbreviation": "CL5"
+  },
+  {
+    "id": 20,
+    "name": "Super League 4",
+    "shortName": "S4",
+    "abbreviation": "SL4"
+  }
+]

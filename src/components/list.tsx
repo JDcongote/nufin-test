@@ -1,8 +1,28 @@
 import React from 'react';
+import './List.scss';
 
-type State = { x: number };
-type Props = { name: string };
+type ListProps = {
+  items: ListItem[];
+  class?: string;
+  onScroll?: (event: React.UIEvent<HTMLUListElement>) => void;
+};
 
-class List extends React.Component<Props, State> {}
+export type ListItem = { key: string; fragment: React.ReactElement };
+
+const List = (props: ListProps) => {
+  const items = props.items;
+  return (
+    <ul
+      className={'list' + (props.class ? props.class : '')}
+      onScroll={props.onScroll}
+    >
+      {items.map(item => (
+        <li key={item.key} className="list__item">
+          {item.fragment}
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default List;

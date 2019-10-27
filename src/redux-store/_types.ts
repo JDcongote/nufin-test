@@ -5,6 +5,8 @@ export const FETCHING_TEAMS = 'FETCHING_TEAMS';
 export const FETCHED_TEAMS = 'FETCHED_TEAMS';
 export const FETCH_TEAM_BY_CONF = 'FETCH_TEAM_BY_CONF';
 
+export const NETWORK_ERROR = 'NETWORK_ERROR';
+
 //states
 
 export interface iTeamsState {
@@ -16,6 +18,11 @@ export interface iTeamsState {
 export interface iConferencesState {
   conferences: Conference[];
   fetching: boolean;
+}
+
+export interface iErrorState {
+  reason: string;
+  message: string;
 }
 
 //actions
@@ -44,19 +51,20 @@ export interface Team {
   id: number;
   school: string;
   mascot: string;
-  abbv: string;
+  abbreviation: string;
   altNames: string[];
   conference: string;
   division: string;
   color: string;
   altColor: string;
+  logos: string[];
 }
 
 export interface Conference {
   id: number;
   name: string;
   shortName: string;
-  abbv: string;
+  abbreviation: string;
 }
 
 //export action types
@@ -65,3 +73,8 @@ export type ActionTypes =
   | FetchConferencesAction
   | FetchingTeamsAction
   | FetchedTeamsAction;
+
+export type Error = {
+  type: typeof NETWORK_ERROR;
+  payload: iErrorState;
+};

@@ -1,0 +1,10 @@
+@import '../../styles/variables/index';
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+
+    &__input {
+        margin: 10px;
+    }
+}

@@ -5,7 +5,10 @@ import {
   FETCH_CONFERENCES,
   FETCHING_TEAMS,
   FETCHED_TEAMS,
-  ActionTypes
+  NETWORK_ERROR,
+  ActionTypes,
+  Error,
+  iErrorState
 } from '../_types';
 
 export function fetchingTeams(): ActionTypes {
@@ -33,5 +36,12 @@ export function fetchedConferences(
   return {
     type: FETCH_CONFERENCES,
     payload: conferences
+  };
+}
+
+export function networkError(error: iErrorState): Error {
+  return {
+    type: NETWORK_ERROR,
+    payload: error
   };
 }

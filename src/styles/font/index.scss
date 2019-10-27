@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'GeoSans';
+    src: url('./font/GeosansLight.woff') format('woff'),
+        url('./font/GeosansLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JackportCollege';
+    src: url('./font/JACKPORTCOLLEGENCV.eot');
+    /* IE9 Compat Modes */
+    src: url('./font/JACKPORTCOLLEGENCV.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('./font/JACKPORTCOLLEGENCV.woff') format('woff'),
+        /* Modern Browsers */
+        url('./font/JACKPORTCOLLEGENCV.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('./font/JACKPORTCOLLEGENCV.svg#svgFontName') format('svg');
+    /* Legacy iOS */
+}

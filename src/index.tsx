@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import App from './components/App';
 import configureStore from './redux-store';
 
-import App from './components/App';
+const root = document.getElementById('teams-app');
 
-const root = document.getElementById('APP');
-
+// create the app store
 const defaultStore = configureStore();
 
 ReactDOM.render(
   <Provider store={defaultStore}>
-    <App />
+    <App store={defaultStore} />
   </Provider>,
   root
 );
