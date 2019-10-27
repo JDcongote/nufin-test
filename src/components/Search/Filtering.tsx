@@ -35,10 +35,7 @@ class Filtering extends React.PureComponent<FilteringProps, State> {
   };
 
   componentDidUpdate(prevProps: FilteringProps) {
-    if (
-      prevProps.facetGroups !== this.props.facetGroups &&
-      !this.state.facetsFull
-    ) {
+    if (!this.state.facetsFull) {
       const fullFacets = this.props.facetGroups.map(facetGroup => {
         return {
           id: facetGroup.id,

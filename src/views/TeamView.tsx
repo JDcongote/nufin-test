@@ -14,24 +14,29 @@ type Props = {
 };
 type State = {
   selectedTeam: Team | undefined;
-  teams: ListItem[];
+  teams: Team[];
+  conferences: Conference[];
   scrolledList: boolean;
-  facets: PartialFacet[];
 };
 
 class TeamView extends React.PureComponent<Props, State> {
-  state = {
-    selectedTeam: undefined,
-    teams: [],
-    facets: [],
-    scrolledList: false
-  };
+  componentDidMount() {
+    this.setState({
+      selectedTeam: undefined,
+      teams: this.props.teams,
+      conferences: this.props.conferences,
+      scrolledList: false
+    });
+  }
 
   componentDidUpdate(prevProps: Props) {
     if (prevProps.teams !== this.props.teams) {
-      const teams = this.createTeams(this.props.teams);
-      const facets = this.createFilterFacets();
-      this.setState({ teams: teams, facets: facets });
+      this.setState({
+        teams: this.props.teams
+      });
+    }
+    if (prevProps.conferences !== this.props.conferences) {
+      this.setState({ conferences: this.props.conferences });
     }
   }
 
@@ -51,8 +56,8 @@ class TeamView extends React.PureComponent<Props, State> {
     this.setState({ teams: filteredTeams });
   }
 
-  createTeams(teamList: Team[]): ListItem[] {
-    const teams = teamList.map(item => ({
+  createTeams(): ListItem[] {
+    const teams = this.state.teams.map(item => ({
       key: item.id.toString(),
       fragment: (
         <TeamItem team={item} select={this.onSelectTeam.bind(this)}></TeamItem>
@@ -97,7 +102,7 @@ class TeamView extends React.PureComponent<Props, State> {
     if (this.state) {
       //set content and paging up
       let content = (
-        <List items={this.state.teams} onScroll={this.onScroll}></List>
+        <List items={this.createTeams()} onScroll={this.onScroll}></List>
       );
       if (this.state && this.state.selectedTeam) {
         content = (
@@ -116,7 +121,7 @@ class TeamView extends React.PureComponent<Props, State> {
           ></SearchBar>
           {content}
           <Filtering
-            facetGroups={this.state.facets}
+            facetGroups={this.createFilterFacets()}
             content={this.props.teams}
           ></Filtering>
         </React.Fragment>
