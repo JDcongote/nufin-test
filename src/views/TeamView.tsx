@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 import { ConferenceReducer } from 'redux-store/reducers/_conference-reducer';
 import { TeamReducer } from 'redux-store/reducers/_team-reducer';
 import { iConferencesState, iTeamsState, Team } from 'redux-store/_types';
+import Item, { ItemData } from '../components/Common/Item';
 import List, { ListItem } from '../components/Common/list';
-import Filtering from '../components/Search/Filtering';
+import Filter, { tFilter } from '../components/Search/Filter';
 import SearchBar from '../components/Search/SearchBar';
 import TeamDetail from '../components/TeamDetail/TeamDetail';
 import { filterTeams } from '../redux-store/actions';
 import '../styles/components/TeamView.scss';
-import Item, { ItemData } from '../components/Common/Item';
-import { tFacet } from 'components/Search/FacetGroup';
 
 type Props = {
   teamStore: iTeamsState;
   conferenceStore: iConferencesState;
   dispatch: (fn: any) => void;
+  onScroll: (event: React.UIEvent) => void;
 };
 type State = {
   selectedTeam: Team | undefined;
@@ -102,44 +102,18 @@ class TeamView extends React.PureComponent<Props, State> {
     return teams;
   }
 
-  createFilterFacets(): tFacet[] {
-    let confFacets = {
-      id: 'conference',
-      name: 'Conferences',
-      isRadio: true,
-      facets: this.props.conferenceStore.conferences.map(item => {
-        return {
-          key: item.abbreviation + item.id,
-          fragment: { name: item.name, id: item.abbreviation + item.id }
-        };
-      })
-    };
-    let divisionFacets = {
-      id: 'division',
-      name: 'Divisions',
-      isRadio: true,
-      facets: [
-        {
-          key: 'Atlantic',
-          fragment: { name: 'Atlantic', id: 'Atlantic' }
-        },
-        {
-          key: 'Coastal',
-          fragment: { name: 'Coastal', id: 'Coastal' }
-        }
-      ]
-    };
-    return [confFacets, divisionFacets];
+  createFilters(): tFilter[] {
+    return this.props.conferenceStore.conferences.map(item => {
+      return { id: item.abbreviation, name: item.name };
+    });
   }
-
-  onScroll(event: React.UIEvent) {}
 
   render() {
     // if content not ready show loader
     if (this.state) {
       // set content and paging up
       let content = (
-        <List items={this.createTeams()} onScroll={this.onScroll}></List>
+        <List items={this.createTeams()} onScroll={this.props.onScroll}></List>
       );
       if (this.state && this.state.selectedTeam) {
         content = (
@@ -157,14 +131,14 @@ class TeamView extends React.PureComponent<Props, State> {
             content={this.props.teamStore.teams}
             property="school"
           ></SearchBar>
+          <Filter
+            filters={this.createFilters()}
+            onFilter={this.onSearchTeam.bind(this)}
+            content={this.props.teamStore.teams}
+            property="conference"
+          ></Filter>
 
           {content}
-
-          <Filtering
-            facetGroups={this.createFilterFacets()}
-            content={this.props.teamStore.teams}
-            onFilter={this.onFilterTeams.bind(this)}
-          ></Filtering>
         </React.Fragment>
       );
     } else {

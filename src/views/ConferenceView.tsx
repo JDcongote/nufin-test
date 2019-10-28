@@ -23,7 +23,12 @@ class ConferenceView extends React.PureComponent<Props> {
       return {
         key: item.id.toString(),
         fragment: (
-          <Item items={items} title={item.name} image={''} object={item}></Item>
+          <Item
+            items={items}
+            title={item.name}
+            image={'src/static/icons/NCAA_logo.svg'}
+            object={item}
+          ></Item>
         )
       };
     });
