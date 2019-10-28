@@ -29,7 +29,9 @@ class ConferenceView extends React.PureComponent<Props> {
           <Item
             items={items}
             title={item.name}
-            image={'src/static/icons/NCAA_logo.svg'}
+            image={
+              'https://upload.wikimedia.org/wikipedia/commons/d/dd/NCAA_logo.svg'
+            }
           ></Item>
         )
       };
