@@ -19,12 +19,7 @@
     color: var(--color--secondary);
 
     @include breakpoint(phone-up) {
-      margin: 0 1rem;
-      flex: 1;
-    }
-
-    @include breakpoint(desktop-up) {
-      margin: 0 2em;
+      display: none;
     }
   }
 
@@ -93,6 +88,10 @@
     align-items: center;
     padding: 10px;
 
+    @include breakpoint(phone-up) {
+      margin: 0 1em;
+    }
+
     &--opened {
       clip-path: circle(200% at 90% 3%);
       pointer-events: all;
@@ -101,7 +100,6 @@
     &-item {
       font-size: 2em;
       font-weight: bold;
-
 
       @include breakpoint(phone-up) {
         font-size: 1em;
@@ -112,15 +110,30 @@
         align-items: center;
         justify-content: center;
         height: 100%;
+        font-size: 1.5em;
+        opacity: 0.5;
+        transition: 0.5s all;
 
         &:after {
           content: "";
           border-bottom: 4px solid var(--color--primary);
-          width: 200%;
+          width: 150%;
           height: 100%;
           position: absolute;
           box-sizing: border-box;
           transition: 0.5s all;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &--active {
+          opacity: 1;
+
+          &:after {
+            border-bottom: 4px solid var(--color--secondary);
+          }
         }
 
         &:hover {

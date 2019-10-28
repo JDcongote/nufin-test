@@ -5,6 +5,7 @@ type HeaderProps = {
   items: any[];
   onMenuClick: (item: any) => void;
   pageTitle: string;
+  currentPage?: string;
 };
 
 const Header = (props: HeaderProps) => {
@@ -36,7 +37,11 @@ const Header = (props: HeaderProps) => {
           {props.items.map(item => (
             <li
               key={item.id}
-              className="nav-header__menu-item"
+              className={
+                item.id === props.currentPage
+                  ? 'nav-header__menu-item nav-header__menu-item--active'
+                  : 'nav-header__menu-item'
+              }
               onClick={() => {
                 props.onMenuClick(item);
                 openMenu(false);
