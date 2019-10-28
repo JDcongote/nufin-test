@@ -1,11 +1,13 @@
 @import '../../styles/variables/index';
+@import'../../styles/tools/mixins';
 
 .nav-header {
   width: 100%;
   height: 40px;
-  background-color: var(--color--primary);
+  background-color: var(--color--background-secondary);
   position: relative;
   display: flex;
+
 
   &__title {
     font-weight: bolder;
@@ -14,6 +16,12 @@
     font-size: 20px;
     margin: auto;
     align-self: center;
+    color: var(--color--secondary);
+
+    @include breakpoint(phone-up) {
+      margin: 0 1rem;
+      flex: 1;
+    }
   }
 
   &__hamburger {
@@ -21,7 +29,7 @@
     cursor: pointer;
     right: 5%;
     align-self: center;
-    z-index: var(--z-index--level-1);
+    z-index: var(--z-index--level-3);
     -webkit-tap-highlight-color: transparent;
 
     .line {
@@ -57,6 +65,11 @@
         display: none;
       }
     }
+
+    @include breakpoint(phone-up) {
+      display: none;
+      pointer-events: none;
+    }
   }
 
   &__menu {
@@ -67,8 +80,9 @@
     clip-path: circle(0px at 90% 3%);
     transition: all 200ms ease-out;
     background: var(--color--primary);
+    color: var(--color--secondary);
     pointer-events: none;
-
+    z-index: var(--z-index--level-2);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -83,6 +97,26 @@
     &-item {
       font-size: 2em;
       font-weight: bold;
+
+      @include breakpoint(phone-up) {
+        font-size: 1em;
+        font-weight: 600;
+        ;
+      }
+    }
+
+    @include breakpoint(phone-up) {
+      position: relative;
+      display: inline;
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      clip-path: none;
+      background: transparent;
+      pointer-events: all;
+      justify-content: space-around;
+      width: 50%;
     }
   }
 }

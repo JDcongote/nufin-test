@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { ConferenceReducer } from 'redux-store/reducers/_conference-reducer';
 import { TeamReducer } from 'redux-store/reducers/_team-reducer';
 import { iConferencesState, iTeamsState, Team } from 'redux-store/_types';
+import Button from '../components/Common/Button';
 import Item, { ItemData } from '../components/Common/Item';
 import List, { ListItem } from '../components/Common/list';
 import Filter, { tFilter } from '../components/Search/Filter';
@@ -15,8 +16,8 @@ type Props = {
   teamStore: iTeamsState;
   conferenceStore: iConferencesState;
   dispatch: (fn: any) => void;
-  onScroll: (event: React.UIEvent) => void;
 };
+
 type State = {
   selectedTeam: Team | undefined;
   loading: boolean;
@@ -29,6 +30,9 @@ const mapStateToProps = (state: State) => ({
   conferenceStore: state.conferenceReducer
 });
 
+/**
+ * Shows teams with their data
+ */
 class TeamView extends React.PureComponent<Props, State> {
   componentDidMount() {
     // reset filter state
@@ -50,22 +54,37 @@ class TeamView extends React.PureComponent<Props, State> {
    * updates state when a team is selected
    */
   onSelectTeam(team: Team) {
-    console.log('selected team: ' + team.school);
     this.setState({ selectedTeam: team });
   }
 
+  /**
+   * when we deselect a team go back to the full list
+   */
   onDeselectTeam() {
     this.setState({ selectedTeam: undefined });
   }
 
+  /**
+   * when the search component is used dispatch the filter action to save the
+   * filtered items in the store
+   * @param filteredTeams
+   */
   onSearchTeam(filteredTeams: Team[]) {
     this.props.dispatch(filterTeams(filteredTeams));
   }
 
+  /**
+   * when the filter component is used dispatch the filter action to save the
+   * filtered items in the store
+   * @param filteredTeams
+   */
   onFilterTeams(filteredTeams: Team[]) {
     this.props.dispatch(filterTeams(filteredTeams));
   }
 
+  /**
+   * build the representation of the team data for the components to use
+   */
   createTeams(): ListItem[] {
     const teams = this.props.teamStore.filteredTeams.map(item => {
       const items: ItemData[] = [
@@ -93,8 +112,14 @@ class TeamView extends React.PureComponent<Props, State> {
             items={items}
             title={item.school}
             image={item.logos[0]}
-            object={item}
-            select={this.onSelectTeam.bind(this)}
+            highlightColor={item.color}
+            button={
+              <Button
+                onClick={this.onSelectTeam.bind(this)}
+                context={item}
+                text="Details"
+              ></Button>
+            }
           ></Item>
         )
       };
@@ -102,6 +127,9 @@ class TeamView extends React.PureComponent<Props, State> {
     return teams;
   }
 
+  /**
+   * Create the filter facets
+   */
   createFilters(): tFilter[] {
     return this.props.conferenceStore.conferences.map(item => {
       return { id: item.abbreviation, name: item.name };
@@ -112,9 +140,7 @@ class TeamView extends React.PureComponent<Props, State> {
     // if content not ready show loader
     if (this.state) {
       // set content and paging up
-      let content = (
-        <List items={this.createTeams()} onScroll={this.props.onScroll}></List>
-      );
+      let content = <List items={this.createTeams()}></List>;
       if (this.state && this.state.selectedTeam) {
         content = (
           <TeamDetail
@@ -126,17 +152,19 @@ class TeamView extends React.PureComponent<Props, State> {
 
       return (
         <React.Fragment>
-          <SearchBar
-            onSearch={this.onSearchTeam.bind(this)}
-            content={this.props.teamStore.teams}
-            property="school"
-          ></SearchBar>
-          <Filter
-            filters={this.createFilters()}
-            onFilter={this.onSearchTeam.bind(this)}
-            content={this.props.teamStore.teams}
-            property="conference"
-          ></Filter>
+          <div className="filter-utils">
+            <SearchBar
+              onSearch={this.onSearchTeam.bind(this)}
+              content={this.props.teamStore.teams}
+              property="school"
+            ></SearchBar>
+            <Filter
+              filters={this.createFilters()}
+              onFilter={this.onSearchTeam.bind(this)}
+              content={this.props.teamStore.teams}
+              property="conference"
+            ></Filter>
+          </div>
 
           {content}
         </React.Fragment>

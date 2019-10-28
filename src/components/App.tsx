@@ -49,7 +49,6 @@ class App extends React.PureComponent<Props> {
     { name: 'Teams', id: 'teams' },
     { name: 'Conferences', id: 'conferences' }
   ];
-  unloadedConferences: { [id: string]: boolean } = {};
 
   componentDidMount() {
     this.props.thunkFetchConferences();
@@ -59,27 +58,10 @@ class App extends React.PureComponent<Props> {
    * Given a collection of conferences, fetch all teams belonging to them.
    * @param conferences
    */
-  fetchFirstTeams(conferences: Conference[]) {
-    delete this.unloadedConferences[conferences[0].abbreviation];
-    this.props.thunkFetchTeams(conferences[0].abbreviation);
-  }
-
-  fetchNextConferenceTeams() {
-    debugger;
-    const key = Object.keys(this.unloadedConferences)[0];
-    delete this.unloadedConferences[key];
-    this.props.thunkFetchTeams(key);
-  }
-
-  fetchTeamsByConference(conference: string) {}
-
-  onTeamListSCroll(event: React.UIEvent<HTMLUListElement>) {
-    if (
-      event.target.scrollHeight - event.target.scrollTop < 1000 &&
-      !this.props.loading
-    ) {
-      this.fetchNextConferenceTeams();
-    }
+  fetchTeamsByConferences(conferences: Conference[]) {
+    conferences.map(item => {
+      this.props.thunkFetchTeams(item.abbreviation);
+    });
   }
 
   /**
@@ -90,11 +72,8 @@ class App extends React.PureComponent<Props> {
     if (
       this.props.conferences.conferences !== prevProps.conferences.conferences
     ) {
-      this.props.conferences.conferences.forEach(
-        conf => (this.unloadedConferences[conf.abbreviation] = true)
-      );
       //TODO: perhaps load images as well when fetching teams?
-      this.fetchFirstTeams(this.props.conferences.conferences);
+      this.fetchTeamsByConferences(this.props.conferences.conferences);
       this.setState({ conferences: this.props.conferences.conferences });
     }
 
@@ -131,9 +110,7 @@ class App extends React.PureComponent<Props> {
             pageTitle={this.state.page}
             onMenuClick={this.changePage.bind(this)}
           ></Header>
-          {this.state.page === 'teams' && (
-            <TeamView onScroll={this.onTeamListSCroll.bind(this)}></TeamView>
-          )}
+          {this.state.page === 'teams' && <TeamView></TeamView>}
           {this.state.page === 'conferences' && (
             <ConferenceView
               conferences={this.state.conferences}

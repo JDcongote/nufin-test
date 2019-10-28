@@ -1,1 +1,55 @@
-@desaturate parameter color
+@import '../variables/breakpoints';
+
+// clears all default button styles
+// (except for cursor, remains 'pointer')
+@mixin button-unstyled() {
+    & {
+        background: none;
+        border: 0;
+        color: inherit;
+        font: inherit;
+        line-height: normal;
+        overflow: visible;
+        padding: 0;
+        cursor: pointer;
+    }
+}
+
+// Generic mixin to create media queries
+@mixin breakpoint($range) {
+    @if $range==phone-up {
+        @media (min-width: #{$phone-upper-boundary - 0.063}) {
+            @content;
+        }
+    }
+
+    @if $range==tablet-portrait-only {
+        @media (min-width: #{$phone-upper-boundary - 0.063}) and (max-width: #{$tablet-portrait-upper-boundary - 0.063}) {
+            @content;
+        }
+    }
+
+    @else if $range==tablet-portrait-up {
+        @media (min-width: $phone-upper-boundary) {
+            @content;
+        }
+    }
+
+    @else if $range==tablet-landscape-up {
+        @media (min-width: $tablet-portrait-upper-boundary) {
+            @content;
+        }
+    }
+
+    @else if $range==desktop-up {
+        @media (min-width: $tablet-landscape-upper-boundary) {
+            @content;
+        }
+    }
+
+    @else if $range==big-desktop-up {
+        @media (min-width: $desktop-upper-boundary) {
+            @content;
+        }
+    }
+}

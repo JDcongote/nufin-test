@@ -1,13 +1,13 @@
 import React from 'react';
 import './Item.scss';
-import { Team } from 'redux-store/_types';
+import Button from './Button';
 
 type ItemProps = {
-  select?: (object: any) => void;
   items: ItemData[];
+  highlightColor?: string;
+  button?: JSX.Element;
   title: string;
   image?: string;
-  object?: any;
 };
 
 export type ItemData = {
@@ -15,25 +15,25 @@ export type ItemData = {
   name: string;
 };
 
-const Item = ({ title, items, select, image, object }: ItemProps) => {
-  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
-    event.preventDefault();
-    select(object);
-  }
+const Item = ({ title, items, button, image, highlightColor }: ItemProps) => {
   return (
-    <div className="team-item">
-      <div className="team-item__header">
+    <div className="item">
+      <div
+        className="item__highlight"
+        style={{ backgroundColor: highlightColor }}
+      ></div>
+      <div className="item__header">
         <h3 className="school-name">{title}</h3>
       </div>
-      <div className="team-item__content">
+      <div className="item__content">
         <aside className="logo">
           <img className="logo-image" src={image}></img>
         </aside>
         <table className="detail">
           <tbody>
             {items.map(item => (
-              <tr>
-                <td className="" id={item.id + '-label'}>
+              <tr key={item.id}>
+                <td className="detail__label" id={item.id + '-label'}>
                   {item.id}:
                 </td>
                 <td aria-labelledby={item.id + '-label'}>{item.name}</td>
@@ -42,9 +42,7 @@ const Item = ({ title, items, select, image, object }: ItemProps) => {
           </tbody>
         </table>
       </div>
-      <div className="team-item__footer">
-        <button onClick={handleClick}>Details</button>
-      </div>
+      <div className="item__footer">{button}</div>
     </div>
   );
 };

@@ -1,5 +1,25 @@
+@import '../../styles/variables/index';
+@import'../../styles/tools/mixins';
+
 .list {
   overflow-y: auto;
   flex: 1;
   list-style: none;
+
+  @include breakpoint(tablet-portrait-up) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  @include breakpoint(tablet-landscape-up) {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    margin-top: 1em;
+  }
+
+  @include breakpoint(desktop-up) {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin-top: 2em;
+  }
 }

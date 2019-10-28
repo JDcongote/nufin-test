@@ -1,0 +1,40 @@
+@import '../../styles/variables/index';
+
+.filter {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+
+    &__select {
+        -webkit-appearance: none;
+        background-color: var(--color--secondary);
+        border: none;
+        border-radius: var(--border--radius--normal);
+        padding: 0.3em 1em;
+        outline: none;
+        width: 100%;
+
+        &-container {
+            margin: 10px;
+            width: 100%;
+            justify-self: center;
+            background-color: var(--color--secondary);
+            border-radius: var(--border--radius--normal);
+            display: flex;
+            cursor: pointer;
+
+            &:after {
+                content: "";
+                width: 5px;
+                height: 5px;
+                border-bottom: 2px solid var(--color--primary);
+                border-right: 2px solid var(--color--primary);
+                transform: rotateZ(45deg);
+                align-self: center;
+                right: 10px;
+                position: absolute;
+                margin-right: 1em;
+            }
+        }
+    }
+}

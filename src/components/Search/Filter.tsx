@@ -32,16 +32,27 @@ class Filter extends React.PureComponent<FilterProps, State> {
   }
   render() {
     return (
-      <select className="filter" onChange={this.doFiltering.bind(this)}>
-        <option key="default" id="none" onClick={this.doFiltering.bind(this)}>
-          -
-        </option>
-        {this.props.filters.map(filter => (
-          <option key={filter.id} id={filter.id}>
-            {filter.name}
-          </option>
-        ))}
-      </select>
+      <div className="filter">
+        <div className="filter__select-container">
+          <select
+            className="filter__select"
+            onChange={this.doFiltering.bind(this)}
+          >
+            <option
+              key="default"
+              id="none"
+              onClick={this.doFiltering.bind(this)}
+            >
+              -
+            </option>
+            {this.props.filters.map(filter => (
+              <option key={filter.id} id={filter.id}>
+                {filter.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
     );
   }
 }

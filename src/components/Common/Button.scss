@@ -1,0 +1,14 @@
+@import '../../styles/variables/index';
+@import '../../styles/tools/mixins';
+
+.button {
+    @include button-unstyled;
+    border-radius: var(--border--radius--small);
+
+    &-primary {
+        padding: 0.5em;
+        background-color: var(--color--button-primary);
+        font-weight: bold;
+        color: var(--color--secondary);
+    }
+}

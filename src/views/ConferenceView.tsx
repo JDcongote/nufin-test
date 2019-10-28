@@ -1,12 +1,15 @@
 import React from 'react';
 import { Conference } from 'redux-store/_types';
-import List, { ListItem } from '../components/Common/list';
 import Item, { ItemData } from '../components/Common/Item';
+import List, { ListItem } from '../components/Common/list';
 
 type Props = {
   conferences: Conference[];
 };
 
+/**
+ * List of conferences
+ */
 class ConferenceView extends React.PureComponent<Props> {
   createConferences(): ListItem[] {
     const teams = this.props.conferences.map(item => {
@@ -27,7 +30,6 @@ class ConferenceView extends React.PureComponent<Props> {
             items={items}
             title={item.name}
             image={'src/static/icons/NCAA_logo.svg'}
-            object={item}
           ></Item>
         )
       };

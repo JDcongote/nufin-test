@@ -1,16 +1,45 @@
 @import '../../styles/variables/index';
+@import'../../styles/tools/mixins';
 
-.team-item {
-    width: 100vw;
+.item {
+    position: relative;
+    width: 90vw;
     max-width: 100%;
     padding: 8px;
-    margin: 20px 0px;
+    margin: 20px 5vw;
     background-color: var(--color--background-card);
+    z-index: var(--z-index--level-1);
+    overflow: hidden;
+    min-height: 120px;
+    border-radius: var(--border--radius--medium);
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.18);
+
+    @include breakpoint(tablet-portrait-up) {
+        margin: 6px;
+        width: calc(100% - 12px);
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
+    }
+
+    &__highlight {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 100% 100%);
+        opacity: 0.2;
+    }
 
     &__header {
         width: 100%;
         display: flex;
         justify-content: center;
+        position: relative;
+        z-index: var(--z-index--level-1);
 
         .school-name {
             font-family: JackportCollege;
@@ -25,6 +54,8 @@
         width: 100%;
         display: flex;
         flex-direction: row;
+        position: relative;
+        z-index: var(--z-index--level-1);
 
         .logo {
             width: 20%;
@@ -41,10 +72,18 @@
         .detail {
             min-width: 60%;
             padding: 10px;
+
+            &__label {
+                text-transform: capitalize;
+            }
         }
     }
 
     &__footer {
+        display: flex;
+        justify-content: flex-end;
         width: 100%;
+        position: relative;
+        z-index: var(--z-index--level-1);
     }
 }
