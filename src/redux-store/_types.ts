@@ -3,7 +3,7 @@ export const FETCHING_CONFERENCES = 'FETCHING_CONFERENCES';
 export const FETCH_CONFERENCES = 'FETCH_CONFERENCES';
 export const FETCHING_TEAMS = 'FETCHING_TEAMS';
 export const FETCHED_TEAMS = 'FETCHED_TEAMS';
-export const FETCH_TEAM_BY_CONF = 'FETCH_TEAM_BY_CONF';
+export const FILTER_TEAMS = 'FILTER_TEAMS';
 
 export const NETWORK_ERROR = 'NETWORK_ERROR';
 
@@ -11,6 +11,7 @@ export const NETWORK_ERROR = 'NETWORK_ERROR';
 
 export interface iTeamsState {
   teams: Team[];
+  filteredTeams: Team[];
   conference?: string;
   fetching: boolean;
 }
@@ -45,6 +46,11 @@ interface FetchedTeamsAction {
   payload: iTeamsState;
 }
 
+interface FilterTeamsAction {
+  type: typeof FILTER_TEAMS;
+  payload: Team[];
+}
+
 //types
 
 export interface Team {
@@ -72,7 +78,8 @@ export type ActionTypes =
   | FetchingConferencesAction
   | FetchConferencesAction
   | FetchingTeamsAction
-  | FetchedTeamsAction;
+  | FetchedTeamsAction
+  | FilterTeamsAction;
 
 export type Error = {
   type: typeof NETWORK_ERROR;

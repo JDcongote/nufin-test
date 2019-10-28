@@ -4,26 +4,27 @@ import List, { ListItem } from '../List';
 import Facet from './Facet';
 
 type FilteringProps = {
-  onFilter?: (filtered: any[]) => void;
-  facetGroups: PartialFacet[];
+  onFilter: (filtered: any[]) => void;
+  facetGroups: tFacet[];
   content: any[];
 };
 
 type State = {
   searchTerm: string;
   filterWindowOpen: boolean;
-  facetGroups: FullFacet[];
+  facetGroups: tFacet[];
   facetsFull: boolean;
+  mappedContent: IDictionary<IDictionary<any>>;
 };
 
-export type PartialFacet = {
+export type tFacet = {
   id: string;
-  facets: { key: string; fragment: { name: string; id: string } }[];
-};
-
-type FullFacet = {
-  id: string;
+  name: string;
   facets: ListItem[];
+};
+
+type IDictionary<TValue> = {
+  [id: string]: TValue;
 };
 
 class Filtering extends React.PureComponent<FilteringProps, State> {
@@ -31,21 +32,45 @@ class Filtering extends React.PureComponent<FilteringProps, State> {
     searchTerm: '',
     filterWindowOpen: false,
     facetGroups: [],
-    facetsFull: false
+    facetsFull: false,
+    mappedContent: {}
   };
 
+  /**
+   * Map the available facets to the provided content, makes filtering fast.
+   */
+  mapContentToFacets() {
+    debugger;
+    let mappedContent: IDictionary<IDictionary<any>> = {};
+    this.props.facetGroups.forEach(facetGroup => {
+      mappedContent[facetGroup.id] = {};
+      facetGroup.facets.forEach(facet => {
+        mappedContent[facetGroup.id][facet.key] = this.props.content.filter(
+          team => team[facetGroup.id] === facet.fragment.name
+        );
+      });
+    });
+    this.setState({ mappedContent });
+  }
+
+  /**
+   * Facets need to be finished using the correct component, only runs once
+   * @param prevProps
+   */
   componentDidUpdate(prevProps: FilteringProps) {
-    if (!this.state.facetsFull) {
+    if (!this.state.facetsFull && this.props.content.length > 0) {
       const fullFacets = this.props.facetGroups.map(facetGroup => {
         return {
           id: facetGroup.id,
-          facets: facetGroup.facets.map(facet => ({
+          name: facetGroup.name,
+          facets: facetGroup.facets.map((facet: ListItem) => ({
             key: facet.key,
             fragment: (
               <Facet
                 name={facet.fragment.name}
                 id={facet.fragment.id}
-                onChange={this.onFacetChange}
+                groupId={facetGroup.id}
+                onChange={this.onFacetChange.bind(this)}
               ></Facet>
             )
           }))
@@ -53,18 +78,24 @@ class Filtering extends React.PureComponent<FilteringProps, State> {
       });
       this.setState({ facetsFull: true });
       this.setState({ facetGroups: fullFacets });
+      this.mapContentToFacets();
     }
   }
 
-  doFiltering(term: string) {}
-
-  onFacetChange(facetId: string) {
-    console.log(facetId);
-    /*const term = event.target.value.toLowerCase();
-    this.setState({ searchTerm: term });
-    this.doFiltering(term);*/
+  /**
+   * Whenever a facet change pass the filtered content to the parent
+   * @param facetId
+   * @param facetName
+   * @param groupId
+   */
+  onFacetChange(facetId: string, facetName: string, groupId: string) {
+    this.props.onFilter(this.state.mappedContent[groupId][facetId]);
   }
 
+  /**
+   * Open the filter view
+   * @param event
+   */
   onOpenFilter(event: React.MouseEvent) {
     this.setState({ filterWindowOpen: !this.state.filterWindowOpen });
   }
@@ -84,10 +115,10 @@ class Filtering extends React.PureComponent<FilteringProps, State> {
             No filters Selected
           </div>
           <ul className="filter-view__facet-group-container">
-            {this.state.facetGroups.map((facet: FullFacet) => {
+            {this.state.facetGroups.map((facet: tFacet) => {
               return (
                 <li className="facet-group" key={facet.id}>
-                  <h3>{facet.id}</h3>
+                  <h3>{facet.name}</h3>
                   <List items={facet.facets}></List>
                 </li>
               );

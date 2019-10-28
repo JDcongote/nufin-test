@@ -4,7 +4,8 @@ import './Facet.scss';
 type FacetProps = {
   name: string;
   id: string;
-  onChange: (facetId: string) => void;
+  groupId: string;
+  onChange: (facetId: string, facetName: string, groupId: string) => void;
 };
 
 const Facet = (props: FacetProps) => {
@@ -13,7 +14,7 @@ const Facet = (props: FacetProps) => {
       <input
         type="checkbox"
         className="facet__checkbox"
-        onChange={() => props.onChange(props.id)}
+        onChange={() => props.onChange(props.id, props.name, props.groupId)}
       ></input>
       {props.name}
     </span>

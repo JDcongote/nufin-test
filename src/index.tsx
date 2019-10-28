@@ -11,7 +11,7 @@ const defaultStore = configureStore();
 
 ReactDOM.render(
   <Provider store={defaultStore}>
-    <App store={defaultStore} />
+    <App />
   </Provider>,
   root
 );

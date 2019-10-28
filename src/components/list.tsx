@@ -7,7 +7,7 @@ type ListProps = {
   onScroll?: (event: React.UIEvent<HTMLUListElement>) => void;
 };
 
-export type ListItem = { key: string; fragment: React.ReactElement };
+export type ListItem = { key: string; fragment: React.ReactElement | any };
 
 const List = (props: ListProps) => {
   const items = props.items;

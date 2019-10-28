@@ -6,7 +6,7 @@
     "abbreviation": "H",
     "altNames": [],
     "conference": "Kids League 1",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#037CA2",
     "altColor": "#31381C",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/5.png"]
@@ -18,7 +18,7 @@
     "abbreviation": "CC",
     "altNames": [],
     "conference": "Ultra League 1",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#197F63",
     "altColor": "#A571D4",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/6.png"]
@@ -30,7 +30,7 @@
     "abbreviation": "WOMD",
     "altNames": [],
     "conference": "Super League 1",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#4D3E86",
     "altColor": "#CC7073",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/9.png"]
@@ -42,7 +42,7 @@
     "abbreviation": "P",
     "altNames": [],
     "conference": "Big League 2",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#DAF3B9",
     "altColor": "#90E830",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/12.png"]
@@ -54,7 +54,7 @@
     "abbreviation": "NR",
     "altNames": [],
     "conference": "Core League 2",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#AAB7EA",
     "altColor": "#2CAD93",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/21.png"]
@@ -66,7 +66,7 @@
     "abbreviation": "NB",
     "altNames": [],
     "conference": "Mega League 2",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#78EEFA",
     "altColor": "#389B45",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/23.png"]
@@ -78,7 +78,7 @@
     "abbreviation": "BTTB",
     "altNames": [],
     "conference": "Big League 1",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#41EF45",
     "altColor": "#2042E7",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/24.png"]
@@ -90,7 +90,7 @@
     "abbreviation": "LB",
     "altNames": [],
     "conference": "Kids League 2",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#0DF2E9",
     "altColor": "#A551EB",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/25.png"]
@@ -102,7 +102,7 @@
     "abbreviation": "TA",
     "altNames": [],
     "conference": "Ultra League 3",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#9802D9",
     "altColor": "#1CA5C3",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/26.png"]
@@ -114,7 +114,7 @@
     "abbreviation": "BC",
     "altNames": [],
     "conference": "Super League 3",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#8837F8",
     "altColor": "#C38D72",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/30.png"]
@@ -126,7 +126,7 @@
     "abbreviation": "TFS",
     "altNames": [],
     "conference": "Mega League 3",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#420B89",
     "altColor": "#50E794",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/32.png"]
@@ -138,7 +138,7 @@
     "abbreviation": "NF",
     "altNames": [],
     "conference": "Core League 3",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#E1DF47",
     "altColor": "#D8C975",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/36.png"]
@@ -150,7 +150,7 @@
     "abbreviation": "TO",
     "altNames": [],
     "conference": "Ultra League 4",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#4BAFB0",
     "altColor": "#3EA777",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/38.png"]
@@ -162,7 +162,7 @@
     "abbreviation": "TU",
     "altNames": [],
     "conference": "Ultra League 2",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#FD2451",
     "altColor": "#937167",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/41.png"]
@@ -174,7 +174,7 @@
     "abbreviation": "S",
     "altNames": [],
     "conference": "Big League 4",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#6A9627",
     "altColor": "#D0A4D5",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/52.png"]
@@ -186,7 +186,7 @@
     "abbreviation": "I",
     "altNames": [],
     "conference": "Big League 3",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#19583A",
     "altColor": "#758602",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/58.png"]
@@ -198,7 +198,7 @@
     "abbreviation": "R",
     "altNames": [],
     "conference": "Mega League 1",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#223144",
     "altColor": "#E0A201",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/62.png"]
@@ -210,7 +210,7 @@
     "abbreviation": "BZ",
     "altNames": [],
     "conference": "Core League 4",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#CE2B6B",
     "altColor": "#542620",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/68.png"]
@@ -222,7 +222,7 @@
     "abbreviation": "MD",
     "altNames": [],
     "conference": "Core League 5",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#9BC209",
     "altColor": "#DED0F8",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/87.png"]
@@ -234,7 +234,7 @@
     "abbreviation": "H",
     "altNames": [],
     "conference": "Super League 4",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#B97DC4",
     "altColor": "#593487",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/96.png"]
@@ -246,7 +246,7 @@
     "abbreviation": "GR",
     "altNames": [],
     "conference": "Kids League 1",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#9A1EAB",
     "altColor": "#0094EE",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/97.png"]
@@ -258,7 +258,7 @@
     "abbreviation": "MM",
     "altNames": [],
     "conference": "Ultra League 1",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#0DE876",
     "altColor": "#25909B",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/98.png"]
@@ -270,7 +270,7 @@
     "abbreviation": "YWN",
     "altNames": [],
     "conference": "Super League 1",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#D90E8E",
     "altColor": "#F739AC",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/103.png"]
@@ -282,7 +282,7 @@
     "abbreviation": "S",
     "altNames": [],
     "conference": "Big League 2",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#A1B57F",
     "altColor": "#EDD10A",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/113.png"]
@@ -294,7 +294,7 @@
     "abbreviation": "TT",
     "altNames": [],
     "conference": "Core League 2",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#F9E666",
     "altColor": "#8836A2",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/127.png"]
@@ -306,7 +306,7 @@
     "abbreviation": "HA",
     "altNames": [],
     "conference": "Mega League 2",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#6D1934",
     "altColor": "#660277",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/142.png"]
@@ -318,7 +318,7 @@
     "abbreviation": "C",
     "altNames": [],
     "conference": "Big League 1",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#0B73BE",
     "altColor": "#869BBF",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/145.png"]
@@ -330,7 +330,7 @@
     "abbreviation": "V",
     "altNames": [],
     "conference": "Kids League 2",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#C62AD5",
     "altColor": "#AABA16",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/151.png"]
@@ -342,7 +342,7 @@
     "abbreviation": "TP",
     "altNames": [],
     "conference": "Ultra League 3",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#0DAF75",
     "altColor": "#8D825D",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/152.png"]
@@ -354,7 +354,7 @@
     "abbreviation": "TBOYE",
     "altNames": [],
     "conference": "Super League 3",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#1E888C",
     "altColor": "#67A13C",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/158.png"]
@@ -366,7 +366,7 @@
     "abbreviation": "T",
     "altNames": [],
     "conference": "Mega League 3",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#888890",
     "altColor": "#D55EB7",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/166.png"]
@@ -378,7 +378,7 @@
     "abbreviation": "TB",
     "altNames": [],
     "conference": "Core League 3",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#0613A4",
     "altColor": "#6579A7",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/167.png"]
@@ -390,7 +390,7 @@
     "abbreviation": "BW",
     "altNames": [],
     "conference": "Ultra League 4",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#D94F58",
     "altColor": "#BB0805",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/183.png"]
@@ -402,7 +402,7 @@
     "abbreviation": "G",
     "altNames": [],
     "conference": "Ultra League 2",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#5426F9",
     "altColor": "#BF4EFD",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/189.png"]
@@ -414,7 +414,7 @@
     "abbreviation": "GFH",
     "altNames": [],
     "conference": "Big League 4",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#F016C9",
     "altColor": "#F38E52",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/193.png"]
@@ -426,7 +426,7 @@
     "abbreviation": "GG",
     "altNames": [],
     "conference": "Big League 3",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#0F4CEE",
     "altColor": "#24BA3A",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/194.png"]
@@ -438,7 +438,7 @@
     "abbreviation": "TI",
     "altNames": [],
     "conference": "Mega League 1",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#5885EA",
     "altColor": "#908470",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/195.png"]
@@ -450,7 +450,7 @@
     "abbreviation": "A",
     "altNames": [],
     "conference": "Core League 4",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#5C8AC0",
     "altColor": "#2567D9",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/197.png"]
@@ -462,7 +462,7 @@
     "abbreviation": "TH",
     "altNames": [],
     "conference": "Core League 5",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#5D82A5",
     "altColor": "#03A063",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/202.png"]
@@ -474,7 +474,7 @@
     "abbreviation": "THT",
     "altNames": [],
     "conference": "Super League 4",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#567B72",
     "altColor": "#F26720",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/213.png"]
@@ -486,7 +486,7 @@
     "abbreviation": "V",
     "altNames": [],
     "conference": "Kids League 1",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#DD232F",
     "altColor": "#E102D2",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/218.png"]
@@ -498,7 +498,7 @@
     "abbreviation": "R",
     "altNames": [],
     "conference": "Ultra League 1",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#EFAE8D",
     "altColor": "#02FDB3",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/221.png"]
@@ -510,7 +510,7 @@
     "abbreviation": "EG",
     "altNames": [],
     "conference": "Super League 1",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#A1855E",
     "altColor": "#CAE760",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/228.png"]
@@ -522,7 +522,7 @@
     "abbreviation": "ST",
     "altNames": [],
     "conference": "Big League 2",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#63CA1A",
     "altColor": "#1FD107",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/235.png"]
@@ -534,7 +534,7 @@
     "abbreviation": "NS",
     "altNames": [],
     "conference": "Core League 2",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#C8F057",
     "altColor": "#4BD1B8",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/238.png"]
@@ -546,7 +546,7 @@
     "abbreviation": "JB",
     "altNames": [],
     "conference": "Mega League 2",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#3F1C71",
     "altColor": "#3987A7",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/239.png"]
@@ -558,7 +558,7 @@
     "abbreviation": "T",
     "altNames": [],
     "conference": "Big League 1",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#520EF9",
     "altColor": "#D49DE8",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/242.png"]
@@ -570,7 +570,7 @@
     "abbreviation": "OSK",
     "altNames": [],
     "conference": "Kids League 2",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#77FB69",
     "altColor": "#3E198C",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/245.png"]
@@ -582,7 +582,7 @@
     "abbreviation": "VR",
     "altNames": [],
     "conference": "Ultra League 3",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#2F4293",
     "altColor": "#CB90A7",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/248.png"]
@@ -594,7 +594,7 @@
     "abbreviation": "D",
     "altNames": [],
     "conference": "Super League 3",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#F62EB9",
     "altColor": "#2CB0AE",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/249.png"]
@@ -606,7 +606,7 @@
     "abbreviation": "M",
     "altNames": [],
     "conference": "Mega League 3",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#9FBB19",
     "altColor": "#55B8A2",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/251.png"]
@@ -618,7 +618,7 @@
     "abbreviation": "B",
     "altNames": [],
     "conference": "Core League 3",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#9E460C",
     "altColor": "#923316",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/254.png"]
@@ -630,7 +630,7 @@
     "abbreviation": "TP",
     "altNames": [],
     "conference": "Ultra League 4",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#E4FA4D",
     "altColor": "#5420C8",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/264.png"]
@@ -642,7 +642,7 @@
     "abbreviation": "V",
     "altNames": [],
     "conference": "Ultra League 2",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#3178E1",
     "altColor": "#48CB06",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/265.png"]
@@ -654,7 +654,7 @@
     "abbreviation": "D",
     "altNames": [],
     "conference": "Big League 4",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#104457",
     "altColor": "#05F6C7",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/276.png"]
@@ -666,7 +666,7 @@
     "abbreviation": "TF",
     "altNames": [],
     "conference": "Big League 3",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#B86D5F",
     "altColor": "#42704B",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/277.png"]
@@ -678,7 +678,7 @@
     "abbreviation": "TFHOTA",
     "altNames": [],
     "conference": "Mega League 1",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#BC838E",
     "altColor": "#0061D6",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/278.png"]
@@ -690,7 +690,7 @@
     "abbreviation": "GITM",
     "altNames": [],
     "conference": "Core League 4",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#81E828",
     "altColor": "#709596",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/290.png"]
@@ -702,7 +702,7 @@
     "abbreviation": "M",
     "altNames": [],
     "conference": "Core League 5",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#9A112F",
     "altColor": "#8FADE5",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/295.png"]
@@ -714,7 +714,7 @@
     "abbreviation": "DS",
     "altNames": [],
     "conference": "Super League 4",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#684C02",
     "altColor": "#1E7CEA",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/309.png"]
@@ -726,7 +726,7 @@
     "abbreviation": "DB",
     "altNames": [],
     "conference": "Kids League 1",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#9E793D",
     "altColor": "#A52D9B",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/324.png"]
@@ -738,7 +738,7 @@
     "abbreviation": "TS",
     "altNames": [],
     "conference": "Ultra League 1",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#975AA8",
     "altColor": "#C0BDE5",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/326.png"]
@@ -750,7 +750,7 @@
     "abbreviation": "TB",
     "altNames": [],
     "conference": "Super League 1",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#872DD7",
     "altColor": "#11AE3C",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/333.png"]
@@ -762,7 +762,7 @@
     "abbreviation": "W",
     "altNames": [],
     "conference": "Big League 2",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#645FA4",
     "altColor": "#13CDCC",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/344.png"]
@@ -774,7 +774,7 @@
     "abbreviation": "DC",
     "altNames": [],
     "conference": "Core League 2",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#5E1B2C",
     "altColor": "#F8D391",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/349.png"]
@@ -786,7 +786,7 @@
     "abbreviation": "G",
     "altNames": [],
     "conference": "Mega League 2",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#8C83EE",
     "altColor": "#DEA6D9",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2000.png"]
@@ -798,7 +798,7 @@
     "abbreviation": "TD",
     "altNames": [],
     "conference": "Big League 1",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#D34C8C",
     "altColor": "#84B206",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2006.png"]
@@ -810,7 +810,7 @@
     "abbreviation": "TMO",
     "altNames": [],
     "conference": "Kids League 2",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#6CB0EE",
     "altColor": "#6C40B1",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2026.png"]
@@ -822,7 +822,7 @@
     "abbreviation": "BP",
     "altNames": [],
     "conference": "Ultra League 3",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#B557D8",
     "altColor": "#7FE15F",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2032.png"]
@@ -834,7 +834,7 @@
     "abbreviation": "D",
     "altNames": [],
     "conference": "Super League 3",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#C3949E",
     "altColor": "#984888",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2050.png"]
@@ -846,7 +846,7 @@
     "abbreviation": "J",
     "altNames": [],
     "conference": "Mega League 3",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#EC8DBF",
     "altColor": "#E8EA46",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2084.png"]
@@ -858,7 +858,7 @@
     "abbreviation": "TSB",
     "altNames": [],
     "conference": "Core League 3",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#7F4F83",
     "altColor": "#974A08",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2116.png"]
@@ -870,7 +870,7 @@
     "abbreviation": "TW",
     "altNames": [],
     "conference": "Ultra League 4",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#DBDB3A",
     "altColor": "#FAE68A",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2132.png"]
@@ -882,7 +882,7 @@
     "abbreviation": "GD",
     "altNames": [],
     "conference": "Ultra League 2",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#40F960",
     "altColor": "#06B70A",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2199.png"]
@@ -894,7 +894,7 @@
     "abbreviation": "S",
     "altNames": [],
     "conference": "Big League 4",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#565716",
     "altColor": "#B9A1FC",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2226.png"]
@@ -906,7 +906,7 @@
     "abbreviation": "SD",
     "altNames": [],
     "conference": "Big League 3",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#FE8064",
     "altColor": "#101F1B",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2229.png"]
@@ -918,7 +918,7 @@
     "abbreviation": "TFI",
     "altNames": [],
     "conference": "Mega League 1",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#94D16C",
     "altColor": "#0C6E6B",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2247.png"]
@@ -930,7 +930,7 @@
     "abbreviation": "TB",
     "altNames": [],
     "conference": "Core League 4",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#5F20E0",
     "altColor": "#949F16",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2294.png"]
@@ -942,7 +942,7 @@
     "abbreviation": "TM",
     "altNames": [],
     "conference": "Core League 5",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#98009B",
     "altColor": "#099D58",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2305.png"]
@@ -954,7 +954,7 @@
     "abbreviation": "B",
     "altNames": [],
     "conference": "Super League 4",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#C90499",
     "altColor": "#113A5E",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2309.png"]
@@ -966,7 +966,7 @@
     "abbreviation": "C",
     "altNames": [],
     "conference": "Kids League 1",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#88696A",
     "altColor": "#EE09F1",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2335.png"]
@@ -978,7 +978,7 @@
     "abbreviation": "E",
     "altNames": [],
     "conference": "Ultra League 1",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#2E39E9",
     "altColor": "#86798F",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2348.png"]
@@ -990,7 +990,7 @@
     "abbreviation": "C",
     "altNames": [],
     "conference": "Super League 1",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#A9FC55",
     "altColor": "#B2EEA0",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2393.png"]
@@ -1002,7 +1002,7 @@
     "abbreviation": "TR",
     "altNames": [],
     "conference": "Big League 2",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#96CEA2",
     "altColor": "#FEA950",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2426.png"]
@@ -1014,7 +1014,7 @@
     "abbreviation": "FS",
     "altNames": [],
     "conference": "Core League 2",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#ED28E4",
     "altColor": "#664DDF",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2429.png"]
@@ -1026,7 +1026,7 @@
     "abbreviation": "BF",
     "altNames": [],
     "conference": "Mega League 2",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#E51B75",
     "altColor": "#4AA3CA",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2433.png"]
@@ -1038,7 +1038,7 @@
     "abbreviation": "RB",
     "altNames": [],
     "conference": "Big League 1",
-    "division": "Div4",
+    "division": "Division 4",
     "color": "#929736",
     "altColor": "#C0F2E2",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2440.png"]
@@ -1050,7 +1050,7 @@
     "abbreviation": "TB",
     "altNames": [],
     "conference": "Kids League 2",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#2F1E56",
     "altColor": "#44DBF5",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2459.png"]
@@ -1062,7 +1062,7 @@
     "abbreviation": "SC",
     "altNames": [],
     "conference": "Ultra League 3",
-    "division": "Div1",
+    "division": "Division 1",
     "color": "#669B74",
     "altColor": "#224981",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2567.png"]
@@ -1074,7 +1074,7 @@
     "abbreviation": "H",
     "altNames": [],
     "conference": "Super League 3",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#7A6473",
     "altColor": "#9ED17E",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2572.png"]
@@ -1086,7 +1086,7 @@
     "abbreviation": "TE",
     "altNames": [],
     "conference": "Mega League 3",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#10878F",
     "altColor": "#776854",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2579.png"]
@@ -1098,7 +1098,7 @@
     "abbreviation": "N",
     "altNames": [],
     "conference": "Core League 3",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#69A64C",
     "altColor": "#EFA4ED",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2628.png"]
@@ -1110,7 +1110,7 @@
     "abbreviation": "S",
     "altNames": [],
     "conference": "Ultra League 4",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#65F5E7",
     "altColor": "#558996",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2636.png"]
@@ -1122,7 +1122,7 @@
     "abbreviation": "L",
     "altNames": [],
     "conference": "Ultra League 2",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#5518AD",
     "altColor": "#B7A34B",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2638.png"]
@@ -1134,7 +1134,7 @@
     "abbreviation": "THL",
     "altNames": [],
     "conference": "Big League 4",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#9FE4FE",
     "altColor": "#0609BC",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2641.png"]
@@ -1146,7 +1146,7 @@
     "abbreviation": "TR",
     "altNames": [],
     "conference": "Big League 3",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#B351DC",
     "altColor": "#DCC25F",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2649.png"]
@@ -1158,7 +1158,7 @@
     "abbreviation": "SC",
     "altNames": [],
     "conference": "Mega League 1",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#96D8F6",
     "altColor": "#10DBDB",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2653.png"]
@@ -1170,7 +1170,7 @@
     "abbreviation": "A",
     "altNames": [],
     "conference": "Core League 4",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#CE94D8",
     "altColor": "#A9B4D2",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2655.png"]
@@ -1182,7 +1182,7 @@
     "abbreviation": "C",
     "altNames": [],
     "conference": "Core League 5",
-    "division": "Div3",
+    "division": "Division 3",
     "color": "#3EE953",
     "altColor": "#2D502E",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2711.png"]
@@ -1194,7 +1194,7 @@
     "abbreviation": "SAA",
     "altNames": [],
     "conference": "Super League 4",
-    "division": "Div2",
+    "division": "Division 2",
     "color": "#D007BA",
     "altColor": "#9E2A1A",
     "logos": ["http://a.espncdn.com/i/teamlogos/ncaa/500/2751.png"]

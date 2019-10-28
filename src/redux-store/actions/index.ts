@@ -8,7 +8,9 @@ import {
   NETWORK_ERROR,
   ActionTypes,
   Error,
-  iErrorState
+  iErrorState,
+  FILTER_TEAMS,
+  Team
 } from '../_types';
 
 export function fetchingTeams(): ActionTypes {
@@ -21,6 +23,13 @@ export function fetchedTeams(teams: iTeamsState): ActionTypes {
   return {
     type: FETCHED_TEAMS,
     payload: teams
+  };
+}
+
+export function filterTeams(filteredTeams: Team[]): ActionTypes {
+  return {
+    type: FILTER_TEAMS,
+    payload: filteredTeams
   };
 }
 

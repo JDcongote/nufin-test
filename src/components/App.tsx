@@ -113,12 +113,7 @@ class App extends React.PureComponent<Props> {
             pageTitle={this.state.page}
             onMenuClick={this.changePage.bind(this)}
           ></Header>
-          {this.state.page === 'teams' && (
-            <TeamView
-              teams={this.state.teams}
-              conferences={this.state.conferences}
-            ></TeamView>
-          )}
+          {this.state.page === 'teams' && <TeamView></TeamView>}
           {this.state.page === 'conferences' && (
             <ConferenceView
               conferences={this.state.conferences}
