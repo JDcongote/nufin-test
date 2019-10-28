@@ -1,5 +1,31 @@
 @import '../variables/index';
+@import'../../styles/tools/mixins';
 
 .filter-utils {
-    display: flex;
+    max-height: 50px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    @include breakpoint(tablet-portrait-up) {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 0 2em;
+    }
+
+    @include breakpoint(tablet-landscape-up) {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 66.6% 33.3%;
+        margin-top: 1em;
+        padding: 0 2em;
+    }
+
+    @include breakpoint(desktop-up) {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 75% 25%;
+        margin-top: 2em;
+        padding: 0 2em;
+    }
 }

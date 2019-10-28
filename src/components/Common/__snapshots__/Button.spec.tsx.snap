@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Basic Button Test 1`] = `
+<button
+  className="button button-primary"
+  onClick={[Function]}
+>
+  TEST_BUTTON
+</button>
+`;

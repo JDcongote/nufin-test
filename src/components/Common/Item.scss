@@ -6,7 +6,7 @@
     width: 90vw;
     max-width: 100%;
     padding: 8px;
-    margin: 20px 5vw;
+    margin: 20px auto;
     background-color: var(--color--background-card);
     z-index: var(--z-index--level-1);
     overflow: hidden;
@@ -17,8 +17,8 @@
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.18);
 
     @include breakpoint(tablet-portrait-up) {
-        margin: 6px;
-        width: calc(100% - 12px);
+        margin: 0 1em;
+        width: calc(100% - 2em);
         -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
         -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
         box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
@@ -41,7 +41,7 @@
         position: relative;
         z-index: var(--z-index--level-1);
 
-        .school-name {
+        .item-title {
             font-family: JackportCollege;
             letter-spacing: 0.2em;
             font-size: 20px;

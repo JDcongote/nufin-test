@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item Basic Item Test 1`] = `
+<div
+  className="item"
+>
+  <div
+    className="item__highlight"
+    style={
+      Object {
+        "backgroundColor": undefined,
+      }
+    }
+  />
+  <div
+    className="item__header"
+  >
+    <h3
+      className="item-title"
+    >
+      TITLE
+    </h3>
+  </div>
+  <div
+    className="item__content"
+  >
+    <aside
+      className="logo"
+    >
+      <img
+        className="logo-image"
+        src="http://a.espncdn.com/i/teamlogos/ncaa/500-dark/2000.png"
+      />
+    </aside>
+    <table
+      className="detail"
+    >
+      <tbody>
+        <tr>
+          <td
+            className="detail__label"
+            id="1-label"
+          >
+            1
+            :
+          </td>
+          <td
+            aria-labelledby="1-label"
+          >
+            a
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="detail__label"
+            id="2-label"
+          >
+            2
+            :
+          </td>
+          <td
+            aria-labelledby="2-label"
+          >
+            b
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    className="item__footer"
+  >
+    <button
+      className="button button-primary"
+      onClick={[Function]}
+    >
+      TEST_BUTTON
+    </button>
+  </div>
+</div>
+`;

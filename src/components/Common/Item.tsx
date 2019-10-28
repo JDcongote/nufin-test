@@ -1,6 +1,5 @@
 import React from 'react';
 import './Item.scss';
-import Button from './Button';
 
 type ItemProps = {
   items: ItemData[];
@@ -23,7 +22,7 @@ const Item = ({ title, items, button, image, highlightColor }: ItemProps) => {
         style={{ backgroundColor: highlightColor }}
       ></div>
       <div className="item__header">
-        <h3 className="school-name">{title}</h3>
+        <h3 className="item-title">{title}</h3>
       </div>
       <div className="item__content">
         <aside className="logo">

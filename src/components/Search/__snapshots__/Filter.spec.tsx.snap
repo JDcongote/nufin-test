@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Basic Filter Test 1`] = `
+<div
+  className="filter"
+>
+  <div
+    className="filter__select-container"
+  >
+    <select
+      className="filter__select"
+      onChange={[Function]}
+    >
+      <option
+        id="none"
+        onClick={[Function]}
+      >
+        -
+      </option>
+      <option
+        id="1"
+      >
+        a
+      </option>
+      <option
+        id="2"
+      >
+        a
+      </option>
+    </select>
+  </div>
+</div>
+`;

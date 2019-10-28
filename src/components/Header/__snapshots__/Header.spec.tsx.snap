@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Basic Header Test 1`] = `
+<header>
+  <nav
+    className="nav-header"
+  >
+    <h1
+      className="nav-header__title"
+    >
+      TITLE
+    </h1>
+    <div
+      className="nav-header__hamburger"
+      onClick={[Function]}
+    >
+      <div
+        className="line"
+      />
+      <div
+        className="line"
+      >
+        <div
+          className="rotator"
+        />
+      </div>
+      <div
+        className="line"
+      />
+    </div>
+    <ul
+      className="nav-header__menu"
+    >
+      <li
+        className="nav-header__menu-item"
+        onClick={[Function]}
+      >
+        a
+      </li>
+      <li
+        className="nav-header__menu-item"
+        onClick={[Function]}
+      >
+        b
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

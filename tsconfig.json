@@ -9,6 +9,7 @@
     "strict": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "noImplicitAny": true,
     "jsx": "react",
     "baseUrl": "./src",
     "lib": [
@@ -30,5 +31,7 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true
-  }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
 }

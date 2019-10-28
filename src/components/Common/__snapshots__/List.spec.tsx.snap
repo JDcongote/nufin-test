@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Basic List test, only items 1`] = `
+<ul
+  className="list"
+>
+  <li
+    className="list__item"
+  >
+    <div>
+      a
+    </div>
+  </li>
+  <li
+    className="list__item"
+  >
+    <div>
+      b
+    </div>
+  </li>
+</ul>
+`;

@@ -1,17 +1,25 @@
 @import '../../styles/variables/index';
+@import'../../styles/tools/mixins';
 
 .search-bar {
     display: flex;
     justify-content: center;
-    width: 40%;
+
+    @include breakpoint(tablet-portrait-up) {
+        width: 100%;
+    }
 
     &__input {
-        margin: 10px;
+        margin: 10px 1em;
         border-radius: var(--border--radius--normal);
         border: none;
         padding: 0.5em 1em;
         outline: none;
         width: 100%;
+
+        @include breakpoint(phone-up) {
+            margin: 10px 1em;
+        }
 
         &::placeholder {
             opacity: 0.5;

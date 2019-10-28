@@ -9,17 +9,22 @@
   @include breakpoint(tablet-portrait-up) {
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-row-gap: 1em;
+    padding: 0 2em;
+    margin-top: 1em;
   }
 
   @include breakpoint(tablet-landscape-up) {
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
     margin-top: 1em;
+    padding: 0 2em;
   }
 
   @include breakpoint(desktop-up) {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     margin-top: 2em;
+    padding: 0 2em;
   }
 }
