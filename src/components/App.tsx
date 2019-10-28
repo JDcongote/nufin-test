@@ -59,12 +59,11 @@ class App extends React.PureComponent<Props> {
    * @param conferences
    */
   fetchTeamsByConferences(conferences: Conference[]) {
-    /*conferences.map(item => {
-      //TODO: lazy load this
-      //this.props.thunkFetchTeams(item.abbreviation);
-      this.props.thunkFetchTeams(item.name);
-    });*/
-    this.props.thunkFetchTeams();
+    conferences.map(item => {
+      // TODO: lazy load this
+      this.props.thunkFetchTeams(item.abbreviation);
+    });
+    // this.props.thunkFetchTeams();
   }
 
   /**

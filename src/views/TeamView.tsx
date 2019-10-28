@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { ConferenceReducer } from 'redux-store/reducers/_conference-reducer';
 import { TeamReducer } from 'redux-store/reducers/_team-reducer';
 import { iConferencesState, iTeamsState, Team } from 'redux-store/_types';
-import List, { ListItem } from '../components/List';
-import Filtering, { tFacet } from '../components/Search/Filtering';
+import List, { ListItem } from '../components/Common/list';
+import Filtering from '../components/Search/Filtering';
 import SearchBar from '../components/Search/SearchBar';
-import TeamItem from '../components/Team/TeamItem';
 import TeamDetail from '../components/TeamDetail/TeamDetail';
 import { filterTeams } from '../redux-store/actions';
 import '../styles/components/TeamView.scss';
+import Item, { ItemData } from '../components/Common/Item';
+import { tFacet } from 'components/Search/FacetGroup';
 
 type Props = {
   teamStore: iTeamsState;
@@ -66,12 +67,38 @@ class TeamView extends React.PureComponent<Props, State> {
   }
 
   createTeams(): ListItem[] {
-    const teams = this.props.teamStore.filteredTeams.map(item => ({
-      key: item.id.toString(),
-      fragment: (
-        <TeamItem team={item} select={this.onSelectTeam.bind(this)}></TeamItem>
-      )
-    }));
+    const teams = this.props.teamStore.filteredTeams.map(item => {
+      const items: ItemData[] = [
+        {
+          id: 'school',
+          name: item.school
+        },
+        {
+          id: 'mascot',
+          name: item.mascot
+        },
+        {
+          id: 'conference',
+          name: item.conference
+        },
+        {
+          id: 'division',
+          name: item.division
+        }
+      ];
+      return {
+        key: item.id.toString(),
+        fragment: (
+          <Item
+            items={items}
+            title={item.school}
+            image={item.logos[0]}
+            object={item}
+            select={this.onSelectTeam.bind(this)}
+          ></Item>
+        )
+      };
+    });
     return teams;
   }
 
@@ -79,6 +106,7 @@ class TeamView extends React.PureComponent<Props, State> {
     let confFacets = {
       id: 'conference',
       name: 'Conferences',
+      isRadio: true,
       facets: this.props.conferenceStore.conferences.map(item => {
         return {
           key: item.abbreviation + item.id,
@@ -89,14 +117,15 @@ class TeamView extends React.PureComponent<Props, State> {
     let divisionFacets = {
       id: 'division',
       name: 'Divisions',
+      isRadio: true,
       facets: [
         {
-          key: 'Div1',
-          fragment: { name: 'Division 1', id: 'Div1' }
+          key: 'Atlantic',
+          fragment: { name: 'Atlantic', id: 'Atlantic' }
         },
         {
-          key: 'Div2',
-          fragment: { name: 'Division 2', id: 'Div2' }
+          key: 'Coastal',
+          fragment: { name: 'Coastal', id: 'Coastal' }
         }
       ]
     };
@@ -133,7 +162,7 @@ class TeamView extends React.PureComponent<Props, State> {
 
           <Filtering
             facetGroups={this.createFilterFacets()}
-            content={this.props.teamStore.filteredTeams}
+            content={this.props.teamStore.teams}
             onFilter={this.onFilterTeams.bind(this)}
           ></Filtering>
         </React.Fragment>

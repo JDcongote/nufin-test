@@ -1,7 +1,7 @@
 import React from 'react';
 import './Filtering.scss';
-import List, { ListItem } from '../List';
-import Facet from './Facet';
+import FacetGroup, { tFacet } from './FacetGroup';
+import { ListItem } from 'components/Common/list';
 
 type FilteringProps = {
   onFilter: (filtered: any[]) => void;
@@ -12,18 +12,14 @@ type FilteringProps = {
 type State = {
   searchTerm: string;
   filterWindowOpen: boolean;
-  facetGroups: tFacet[];
   facetsFull: boolean;
   mappedContent: IDictionary<IDictionary<any>>;
+  facetGroups: tFacet[];
+  checkedFacets: boolean;
+  clearedFacets: boolean;
 };
 
-export type tFacet = {
-  id: string;
-  name: string;
-  facets: ListItem[];
-};
-
-type IDictionary<TValue> = {
+export type IDictionary<TValue> = {
   [id: string]: TValue;
 };
 
@@ -31,54 +27,53 @@ class Filtering extends React.PureComponent<FilteringProps, State> {
   state = {
     searchTerm: '',
     filterWindowOpen: false,
-    facetGroups: [],
     facetsFull: false,
-    mappedContent: {}
+    facetGroups: [],
+    mappedContent: {},
+    checkedFacets: false,
+    clearedFacets: false
   };
 
   /**
    * Map the available facets to the provided content, makes filtering fast.
    */
   mapContentToFacets() {
-    debugger;
     let mappedContent: IDictionary<IDictionary<any>> = {};
+    let facetGroups: tFacet[] = [];
     this.props.facetGroups.forEach(facetGroup => {
       mappedContent[facetGroup.id] = {};
+
+      let facets: ListItem[] = [];
       facetGroup.facets.forEach(facet => {
         mappedContent[facetGroup.id][facet.key] = this.props.content.filter(
           team => team[facetGroup.id] === facet.fragment.name
         );
+        if (mappedContent[facetGroup.id][facet.key].length > 0) {
+          let checked = { checked: false };
+          facets.push({ ...facet, ...checked });
+        }
+      });
+      facetGroups.push({
+        id: facetGroup.id,
+        name: facetGroup.name,
+        isRadio: facetGroup.isRadio,
+        facets: facets
       });
     });
-    this.setState({ mappedContent });
+    this.setState({ mappedContent, facetGroups: facetGroups });
   }
 
   /**
-   * Facets need to be finished using the correct component, only runs once
+   * Facets need to be finished using the correct component
    * @param prevProps
    */
   componentDidUpdate(prevProps: FilteringProps) {
-    if (!this.state.facetsFull && this.props.content.length > 0) {
-      const fullFacets = this.props.facetGroups.map(facetGroup => {
-        return {
-          id: facetGroup.id,
-          name: facetGroup.name,
-          facets: facetGroup.facets.map((facet: ListItem) => ({
-            key: facet.key,
-            fragment: (
-              <Facet
-                name={facet.fragment.name}
-                id={facet.fragment.id}
-                groupId={facetGroup.id}
-                onChange={this.onFacetChange.bind(this)}
-              ></Facet>
-            )
-          }))
-        };
-      });
+    if (this.props.content !== prevProps.content) {
       this.setState({ facetsFull: true });
-      this.setState({ facetGroups: fullFacets });
+      this.setState({ facetGroups: this.props.facetGroups });
       this.mapContentToFacets();
+    }
+    if (prevProps.content !== this.props.content) {
     }
   }
 
@@ -88,16 +83,28 @@ class Filtering extends React.PureComponent<FilteringProps, State> {
    * @param facetName
    * @param groupId
    */
-  onFacetChange(facetId: string, facetName: string, groupId: string) {
-    this.props.onFilter(this.state.mappedContent[groupId][facetId]);
+  onFacetsChange(facetId: string, groupId: string, checked: boolean) {
+    // let auxFacets: IDictionary<boolean> = { ...this.state.checkedFacets };
+
+    // auxFacets[facetId] = checked;
+    if (checked) {
+      this.props.onFilter(this.state.mappedContent[groupId][facetId]);
+    } else {
+      this.clearFilter();
+    }
+    this.setState({ checkedFacets: true, clearedFacets: false });
   }
 
   /**
    * Open the filter view
-   * @param event
    */
-  onOpenFilter(event: React.MouseEvent) {
+  onOpenFilter() {
     this.setState({ filterWindowOpen: !this.state.filterWindowOpen });
+  }
+
+  clearFilter() {
+    this.props.onFilter(this.props.content);
+    this.setState({ clearedFacets: true, checkedFacets: false });
   }
 
   render() {
@@ -115,14 +122,14 @@ class Filtering extends React.PureComponent<FilteringProps, State> {
             No filters Selected
           </div>
           <ul className="filter-view__facet-group-container">
-            {this.state.facetGroups.map((facet: tFacet) => {
-              return (
-                <li className="facet-group" key={facet.id}>
-                  <h3>{facet.name}</h3>
-                  <List items={facet.facets}></List>
-                </li>
-              );
-            })}
+            {this.state.facetGroups.map((facet: tFacet) => (
+              <FacetGroup
+                onChange={this.onFacetsChange.bind(this)}
+                isRadio={facet.isRadio}
+                facetGroup={facet}
+                clear={this.state.clearedFacets}
+              ></FacetGroup>
+            ))}
           </ul>
         </div>
         <div className="filter-bar">
@@ -132,6 +139,16 @@ class Filtering extends React.PureComponent<FilteringProps, State> {
           >
             Filters
           </button>
+          {this.state.checkedFacets ? (
+            <button
+              className="filter-bar__button"
+              onClick={this.clearFilter.bind(this)}
+            >
+              Filters
+            </button>
+          ) : (
+            ''
+          )}
         </div>
       </React.Fragment>
     );

@@ -1,24 +1,45 @@
 import React, { useState } from 'react';
-import './Facet.scss';
+import './FacetGroup.scss';
 
 type FacetProps = {
   name: string;
   id: string;
   groupId: string;
-  onChange: (facetId: string, facetName: string, groupId: string) => void;
+  isRadio: boolean;
+  checked: boolean;
+  facet: any;
+  onChange: (
+    facetId: string,
+    selected: boolean,
+    facet: any,
+    facetName?: string
+  ) => void;
 };
 
-const Facet = (props: FacetProps) => {
-  return (
-    <span className="facet">
-      <input
-        type="checkbox"
-        className="facet__checkbox"
-        onChange={() => props.onChange(props.id, props.name, props.groupId)}
-      ></input>
-      {props.name}
-    </span>
-  );
-};
+class Facet extends React.PureComponent<FacetProps> {
+  onChange() {
+    this.props.onChange(
+      this.props.id,
+      !this.props.checked,
+      this.props.facet,
+      this.props.name
+    );
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <input
+          type={this.props.isRadio ? 'radio' : 'checkbox'}
+          name={this.props.groupId}
+          className="facet"
+          onChange={this.onChange.bind(this)}
+          checked={this.props.checked}
+        ></input>
+        {this.props.name}
+      </React.Fragment>
+    );
+  }
+}
 
 export default Facet;

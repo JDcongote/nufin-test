@@ -13,8 +13,8 @@ import {
 
 /**The API was hacked during the development of this app (https://twitter.com/CFB_Data/status/1188197347618103298)
  * so most of the time it was down; I had to use this data as fallback */
-import fallbackTeams from './redux-store/fallback-teams.json';
-import fallbackConfs from './redux-store/fallback-conferences.json';
+// import fallbackTeams from './redux-store/fallback-teams.json';
+// import fallbackConfs from './redux-store/fallback-conferences.json';
 
 const apiUrl = 'https://api.collegefootballdata.com/';
 
@@ -31,6 +31,7 @@ export const thunkFetchTeams = (
   dispatch(
     fetchedTeams({
       teams,
+      filteredTeams: teams,
       fetching: false,
       conference: conference
     })
@@ -64,25 +65,25 @@ export const thunkFetchConferences = (): ThunkAction<
  * Axios fetch
  * @param conference
  */
-/*function fetchTeams(conference?: string): Promise<Team[]> {
+function fetchTeams(conference?: string): Promise<Team[]> {
   return axios
     .get(`${apiUrl}teams`, { params: { conference } })
     .then(response => response.data);
-}*/
+}
 /**
  * Axios fetch
  */
-/*function fetchConferences(): Promise<Conference[]> {
+function fetchConferences(): Promise<Conference[]> {
   return axios
     .get(`${apiUrl}conferences`)
     .then(response => response.data)
     .catch(error => error);
-}*/
+}
 
-function fetchConferences(): Conference[] {
+/*function fetchConferences(): Conference[] {
   return fallbackConfs;
 }
 
 function fetchTeams(conference?: string): Team[] {
   return fallbackTeams;
-}
+}*/

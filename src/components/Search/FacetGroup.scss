@@ -1,0 +1,13 @@
+@import '../../styles/variables/index';
+
+.facet-group {
+  &__form {
+    .form {
+      &__fieldset {
+        border: none;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,23 +1,38 @@
 import React from 'react';
 import { Conference } from 'redux-store/_types';
-import ConferenceItem from '../components/Conference/ConferenceItem';
-import List from '../components/List';
+import List, { ListItem } from '../components/Common/list';
+import Item, { ItemData } from '../components/Common/Item';
 
 type Props = {
   conferences: Conference[];
 };
 
 class ConferenceView extends React.PureComponent<Props> {
-  createConferences() {
-    return this.props.conferences.map(item => ({
-      key: item.id,
-      fragment: <ConferenceItem conference={item}></ConferenceItem>
-    }));
+  createConferences(): ListItem[] {
+    const teams = this.props.conferences.map(item => {
+      const items: ItemData[] = [
+        {
+          id: 'name',
+          name: item.name
+        },
+        {
+          id: 'abbreviation',
+          name: item.abbreviation
+        }
+      ];
+      return {
+        key: item.id.toString(),
+        fragment: (
+          <Item items={items} title={item.name} image={''} object={item}></Item>
+        )
+      };
+    });
+    return teams;
   }
+
   render() {
     return (
       <React.Fragment>
-        <h1>Conferences</h1>
         <List items={this.createConferences()}></List>
       </React.Fragment>
     );
