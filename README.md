@@ -6,7 +6,7 @@ IMPORTANT: You can find the compiled app inside: https://github.com/JDcongote/nu
 
 # installation
 
-1- Install node.js first.
+1- Install node.js.
 2- Run "npm install" in the root of the project
 
 # testing
