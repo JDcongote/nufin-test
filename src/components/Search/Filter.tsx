@@ -21,7 +21,7 @@ class Filter extends React.PureComponent<FilterProps, State> {
   }
   doFiltering(event: React.BaseSyntheticEvent) {
     const term = event.target.value.toLowerCase();
-    if (term !== '-') {
+    if (term !== this.props.property) {
       const filtered = this.props.content.filter(
         item => item[this.props.property].toLowerCase().indexOf(term) > -1
       );
@@ -43,7 +43,7 @@ class Filter extends React.PureComponent<FilterProps, State> {
               id="none"
               onClick={this.doFiltering.bind(this)}
             >
-              -
+              {this.props.property}
             </option>
             {this.props.filters.map(filter => (
               <option key={filter.id} id={filter.id}>

@@ -13,6 +13,7 @@ import { thunkFetchConferences, thunkFetchTeams } from '../thunks';
 import ConferenceView from '../views/ConferenceView';
 import TeamView from '../views/TeamView';
 import Header from './Header/Header';
+import Loader from './Common/Loader';
 
 type Props = {
   thunkFetchTeams: any;
@@ -93,10 +94,8 @@ class App extends React.PureComponent<Props> {
   render() {
     let content;
     if (this.props.loading && !this.state.error) {
-      //TODO: create loader component
-      content = <div>LOADING</div>;
+      content = <Loader></Loader>;
     } else if (this.state.error.message) {
-      //TODO: make pretty
       content = (
         <div className="app__error">
           A {this.state.error.message.toUpperCase()} HAS OCCURRED

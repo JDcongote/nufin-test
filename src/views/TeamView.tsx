@@ -9,6 +9,7 @@ import SearchBar from '../components/Search/SearchBar';
 import TeamDetail from '../components/TeamDetail/TeamDetail';
 import { filterTeams } from '../redux-store/actions';
 import '../styles/components/TeamView.scss';
+import Loader from '../components/Common/Loader';
 
 type Props = {
   teamStore: iTeamsState;
@@ -43,6 +44,11 @@ class TeamView extends React.PureComponent<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     if (prevProps.teamStore.fetching !== this.props.teamStore.fetching) {
+      this.setState({
+        loading: false
+      });
+    }
+    if (this.props.teamStore.teams.length > 0) {
       this.setState({
         loading: false
       });
@@ -137,7 +143,8 @@ class TeamView extends React.PureComponent<Props, State> {
 
   render() {
     // if content not ready show loader
-    if (this.state) {
+
+    if (this.state && !this.state.loading) {
       // set content and paging up
       let content = <List items={this.createTeams()}></List>;
       if (this.state && this.state.selectedTeam) {
@@ -169,7 +176,7 @@ class TeamView extends React.PureComponent<Props, State> {
         </React.Fragment>
       );
     } else {
-      return <div>LOADER</div>;
+      return <Loader></Loader>;
     }
   }
 }

@@ -11,10 +11,13 @@
     align-content: center;
     display: flex;
     font-family: var(--font--college);
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 100;
     position: relative;
     margin: 1rem 0;
+    @include breakpoint(phone-up) {
+      font-size: 60px;
+    }
     .title {
       &__highlight {
         opacity: 0.4;

@@ -1,42 +1,43 @@
 @import '../../styles/variables/index';
-@import'../../styles/tools/mixins';
+@import '../../styles/tools/mixins';
 
 .filter {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    @include breakpoint(tablet-portrait-up) {
-        width: 100%;
+  @include breakpoint(tablet-portrait-up) {
+    width: 100%;
+  }
+
+  &__select {
+    -webkit-appearance: none;
+    background-color: var(--color--secondary);
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    text-transform: capitalize;
+    opacity: 0.5;
+
+    &-container {
+      margin: 10px 1em;
+      border-radius: var(--border--radius--normal);
+      border: none;
+      padding: 0.5em 1em;
+      width: 100%;
+      background-color: var(--color--secondary);
+      display: flex;
+
+      &:after {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-bottom: 2px solid var(--color--primary);
+        border-right: 2px solid var(--color--primary);
+        transform: rotateZ(45deg);
+        align-self: center;
+        margin-left: auto;
+      }
     }
-
-    &__select {
-        -webkit-appearance: none;
-        background-color: var(--color--secondary);
-        border: none;
-        width: 100%;
-        cursor: pointer;
-        outline: none;
-
-        &-container {
-            margin: 10px 1em;
-            border-radius: var(--border--radius--normal);
-            border: none;
-            padding: 0.5em 1em;
-            width: 100%;
-            background-color: var(--color--secondary);
-            display: flex;
-
-            &:after {
-                content: "";
-                width: 5px;
-                height: 5px;
-                border-bottom: 2px solid var(--color--primary);
-                border-right: 2px solid var(--color--primary);
-                transform: rotateZ(45deg);
-                align-self: center;
-                margin-left: auto;
-
-            }
-        }
-    }
+  }
 }

@@ -6,6 +6,7 @@ import { thunkFetchTeamDetail } from '../../thunks';
 import Button from '../Common/Button';
 import List, { ListItem } from '../Common/list';
 import './TeamDetail.scss';
+import Loader from '../Common/Loader';
 
 type TeamDetailProps = {
   team: Team;
@@ -114,7 +115,7 @@ class TeamDetail extends React.PureComponent<TeamDetailProps, TeamDetailState> {
       ></Button>
     );
     if (this.props.loading) {
-      return <div>LOADING</div>;
+      return <Loader></Loader>;
     } else if (
       this.props.teamDetail &&
       this.props.teamDetail.teamDetail.length === 0

@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TeamDetail Basic TeamDetail Test 1`] = `
-<div>
-  LOADING
+<div
+  className="loader"
+>
+  <div
+    className="circle"
+  >
+    <div
+      className="circle__occluder"
+    />
+  </div>
+  <div
+    className="circle circle--reverse"
+  >
+    <div
+      className="circle__occluder circle--reverse__occluder"
+    />
+  </div>
 </div>
 `;

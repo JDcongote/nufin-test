@@ -15,7 +15,7 @@ exports[`Filter Basic Filter Test 1`] = `
         id="none"
         onClick={[Function]}
       >
-        -
+        name
       </option>
       <option
         id="1"
