@@ -1,59 +1,80 @@
-/**Standard Redux type initialization */
+// Standard Redux type initialization
 export const FETCHING_CONFERENCES = 'FETCHING_CONFERENCES';
 export const FETCH_CONFERENCES = 'FETCH_CONFERENCES';
 export const FETCHING_TEAMS = 'FETCHING_TEAMS';
 export const FETCHED_TEAMS = 'FETCHED_TEAMS';
 export const FILTER_TEAMS = 'FILTER_TEAMS';
+export const FETCH_TEAM_DETAIL = 'FETCH_TEAM_DETAIL';
+export const FETCHING_TEAM_DETAIL = 'FETCHING_TEAM_DETAIL';
 
 export const NETWORK_ERROR = 'NETWORK_ERROR';
 
-//states
-
-export interface iTeamsState {
+// state types for type checking
+export type iTeamsState = {
   teams: Team[];
   filteredTeams: Team[];
   conference?: string;
   fetching: boolean;
-}
+};
 
-export interface iConferencesState {
+export type iTeamDetailState = {
+  teamDetail: RosterDetail[];
+  fetching: boolean;
+};
+
+export type iConferencesState = {
   conferences: Conference[];
   fetching: boolean;
-}
+};
 
-export interface iErrorState {
+export type iErrorState = {
   reason: string;
   message: string;
-}
+};
+// end state types
 
-//actions
-//conferences
-interface FetchingConferencesAction {
+// actions
+// conferences actions
+type FetchingConferencesAction = {
   type: typeof FETCHING_CONFERENCES;
-}
+};
 
-interface FetchConferencesAction {
+type FetchConferencesAction = {
   type: typeof FETCH_CONFERENCES;
   payload: iConferencesState;
-}
+};
+// end conferences actions
 
-//teams
-interface FetchingTeamsAction {
+// teams actions
+type FetchingTeamsAction = {
   type: typeof FETCHING_TEAMS;
-}
-interface FetchedTeamsAction {
+};
+type FetchedTeamsAction = {
   type: typeof FETCHED_TEAMS;
   payload: iTeamsState;
-}
+};
 
-interface FilterTeamsAction {
+type FilterTeamsAction = {
   type: typeof FILTER_TEAMS;
   payload: Team[];
-}
+};
 
-//types
+type FetchingTeamDetailAction = {
+  type: typeof FETCHING_TEAM_DETAIL;
+};
 
-export interface Team {
+type FetchTeamDetailAction = {
+  type: typeof FETCH_TEAM_DETAIL;
+  payload: iTeamDetailState;
+};
+// end teams actions
+
+// types
+
+/**
+ * represents a team, maps 1 to 1 with the api.
+ */
+export type Team = {
   id: number;
   school: string;
   mascot: string;
@@ -64,24 +85,49 @@ export interface Team {
   color: string;
   altColor: string;
   logos: string[];
-}
+};
 
-export interface Conference {
+/**
+ * Represents the team detail, maps 1 to 1 with the api.
+ */
+export type RosterDetail = {
+  id: number;
+  first_name: string;
+  last_name: string;
+  height: number;
+  weight: number;
+  jersey: number;
+  year: number;
+  position: string;
+  city: string;
+  state: string;
+  country: string;
+};
+
+/**
+ * represents a conference, maps 1 to 1 with the api.
+ */
+export type Conference = {
   id: number;
   name: string;
   shortName: string;
   abbreviation: string;
-}
+};
 
-//export action types
+/**
+ * error type
+ */
+export type Error = {
+  type: typeof NETWORK_ERROR;
+  payload: iErrorState;
+};
+
+// export action types using typescript's union
 export type ActionTypes =
   | FetchingConferencesAction
   | FetchConferencesAction
   | FetchingTeamsAction
   | FetchedTeamsAction
-  | FilterTeamsAction;
-
-export type Error = {
-  type: typeof NETWORK_ERROR;
-  payload: iErrorState;
-};
+  | FilterTeamsAction
+  | FetchingTeamDetailAction
+  | FetchTeamDetailAction;

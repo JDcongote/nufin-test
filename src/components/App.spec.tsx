@@ -1,9 +1,9 @@
 import { ConferenceReducer } from '../redux-store/reducers/_conference-reducer';
 import { TeamReducer } from '../redux-store/reducers/_team-reducer';
 import {
-  iConferencesState,
-  FETCH_CONFERENCES,
   FETCHED_TEAMS,
+  FETCH_CONFERENCES,
+  iConferencesState,
   iTeamsState
 } from '../redux-store/_types';
 
@@ -83,6 +83,7 @@ describe('App', () => {
     const initialState: iTeamsState = {
       teams: [],
       filteredTeams: [],
+      conference: '',
       fetching: false
     };
     const newState = TeamReducer(initialState, {

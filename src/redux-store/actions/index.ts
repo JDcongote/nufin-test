@@ -1,15 +1,18 @@
 import {
-  iTeamsState,
-  iConferencesState,
-  FETCHING_CONFERENCES,
-  FETCH_CONFERENCES,
-  FETCHING_TEAMS,
-  FETCHED_TEAMS,
-  NETWORK_ERROR,
   ActionTypes,
   Error,
-  iErrorState,
+  FETCHED_TEAMS,
+  FETCHING_CONFERENCES,
+  FETCHING_TEAMS,
+  FETCHING_TEAM_DETAIL,
+  FETCH_CONFERENCES,
+  FETCH_TEAM_DETAIL,
   FILTER_TEAMS,
+  iConferencesState,
+  iErrorState,
+  iTeamDetailState,
+  iTeamsState,
+  NETWORK_ERROR,
   Team
 } from '../_types';
 
@@ -23,6 +26,19 @@ export function fetchedTeams(teams: iTeamsState): ActionTypes {
   return {
     type: FETCHED_TEAMS,
     payload: teams
+  };
+}
+
+export function fetchingTeamDetail(): ActionTypes {
+  return {
+    type: FETCHING_TEAM_DETAIL
+  };
+}
+
+export function fetchedTeamDetail(teamDetail: iTeamDetailState): ActionTypes {
+  return {
+    type: FETCH_TEAM_DETAIL,
+    payload: teamDetail
   };
 }
 

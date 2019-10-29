@@ -1,0 +1,59 @@
+@import '../../styles/variables/index';
+@import '../../styles/tools/mixins';
+
+.team-detail {
+  width: 100vw;
+  background-color: var(--color--background-primary);
+  position: fixed;
+  top: var(--header--height);
+  &__title {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    font-family: var(--font--college);
+    font-size: 50px;
+    font-weight: 100;
+    position: relative;
+    margin: 1rem 0;
+    .title {
+      &__highlight {
+        opacity: 0.4;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+    }
+  }
+  &__player-card {
+    display: flex;
+    background: var(--color--secondary);
+    margin: 1em;
+    border-radius: var(--border--radius--small);
+    font-weight: bold;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.18);
+    .player-card {
+      &__data {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        width: 100%;
+        .data {
+          &__row {
+            display: flex;
+            td {
+              font-size: 1.2em;
+              &:first-child {
+                width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &--empty {
+    @include center-content;
+  }
+}

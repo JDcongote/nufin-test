@@ -1,4 +1,4 @@
-import { NETWORK_ERROR, Error, iErrorState } from '../_types';
+import { Error, iErrorState, NETWORK_ERROR } from '../_types';
 
 const initialState: iErrorState = {
   reason: '',

@@ -71,8 +71,13 @@ exports[`Item Basic Item Test 1`] = `
     className="item__footer"
   >
     <button
-      className="button button-primary"
+      className="button button-primary undefined"
       onClick={[Function]}
+      style={
+        Object {
+          "display": "block",
+        }
+      }
     >
       TEST_BUTTON
     </button>

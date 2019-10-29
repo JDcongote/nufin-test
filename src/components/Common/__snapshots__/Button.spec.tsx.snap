@@ -2,8 +2,13 @@
 
 exports[`Button Basic Button Test 1`] = `
 <button
-  className="button button-primary"
+  className="button button-primary undefined"
   onClick={[Function]}
+  style={
+    Object {
+      "display": "block",
+    }
+  }
 >
   TEST_BUTTON
 </button>

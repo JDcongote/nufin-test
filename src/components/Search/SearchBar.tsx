@@ -27,7 +27,7 @@ class SearchBar extends React.PureComponent<SearchBarProps, State> {
     }
   }
 
-  onInputChange(event: React.ChangeEvent) {
+  onInputChange(event: React.BaseSyntheticEvent) {
     const term = event.target.value.toLowerCase();
     this.setState({ searchTerm: term });
     this.doSearch(term);

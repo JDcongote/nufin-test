@@ -2,13 +2,25 @@
 @import '../../styles/tools/mixins';
 
 .button {
-    @include button-unstyled;
-    border-radius: var(--border--radius--small);
+  @include button-unstyled;
+  z-index: var(--z-index--level-1);
+  border-radius: var(--border--radius--small);
 
-    &-primary {
-        padding: 0.5em;
-        background-color: var(--color--button-primary);
-        font-weight: bold;
-        color: var(--color--secondary);
+  &-primary {
+    padding: 0.5em;
+    background-color: var(--color--button-primary);
+    font-weight: bold;
+    color: var(--color--secondary);
+  }
+  &.bottom {
+    position: fixed;
+    bottom: 0;
+    margin: 1em;
+    &-right {
+      right: 0;
     }
+    &-left {
+      left: 0;
+    }
+  }
 }

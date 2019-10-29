@@ -1,19 +1,10 @@
-import Filter, { tFilter } from './Filter';
+import { configure, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
-
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Filter, { tFilter } from './Filter';
 
 configure({ adapter: new Adapter() });
-
-type FilterProps = {
-  onFilter: (filtered: any[]) => void;
-  filters: tFilter[];
-  content: any[];
-  property: string;
-};
 
 describe('Filter', () => {
   it('Basic Filter Test', () => {

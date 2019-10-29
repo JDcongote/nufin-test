@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import {
   Conference,
   iConferencesState,
-  iTeamsState,
-  iErrorState
+  iErrorState,
+  iTeamsState
 } from 'redux-store/_types';
 import { AppState } from '../redux-store';
 import { fetchedConferences, fetchedTeams } from '../redux-store/actions/';

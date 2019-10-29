@@ -1,7 +1,7 @@
 import {
+  ActionTypes,
   FETCHING_CONFERENCES,
   FETCH_CONFERENCES,
-  ActionTypes,
   iConferencesState
 } from '../_types';
 

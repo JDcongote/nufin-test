@@ -1,10 +1,8 @@
-import List from './list';
+import { configure, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
-
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import List from './list';
 
 configure({ adapter: new Adapter() });
 

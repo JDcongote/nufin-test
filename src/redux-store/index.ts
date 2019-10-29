@@ -1,14 +1,15 @@
-import { TeamReducer } from './reducers/_team-reducer';
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { ConferenceReducer } from './reducers/_conference-reducer';
 import { AppReducer } from './reducers/_app-reducer';
+import { ConferenceReducer } from './reducers/_conference-reducer';
+import { TeamDetailReducer, TeamReducer } from './reducers/_team-reducer';
 
 /**
  * Combine main app reducers
  */
 const rootReducer = combineReducers({
   teamReducer: TeamReducer,
+  teamDetailReducer: TeamDetailReducer,
   conferenceReducer: ConferenceReducer,
   appReducer: AppReducer
 });

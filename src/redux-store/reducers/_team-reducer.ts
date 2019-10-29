@@ -1,15 +1,19 @@
 import {
-  FETCHING_TEAMS,
-  FETCHED_TEAMS,
-  FILTER_TEAMS,
   ActionTypes,
+  FETCHED_TEAMS,
+  FETCHING_TEAMS,
+  FETCHING_TEAM_DETAIL,
+  FETCH_TEAM_DETAIL,
+  FILTER_TEAMS,
+  iTeamDetailState,
   iTeamsState
 } from '../_types';
 
-const initialState: iTeamsState = {
+const initialState = {
   teams: [],
   filteredTeams: [],
-  fetching: false
+  fetching: false,
+  teamDetail: []
 };
 
 export function TeamReducer(
@@ -34,6 +38,33 @@ export function TeamReducer(
       return {
         teams: [...state.teams],
         filteredTeams: [...action.payload],
+        fetching: false
+      };
+    }
+    default:
+      return state;
+  }
+}
+
+const initialDetailState = {
+  teamDetail: [],
+  fetching: false
+};
+
+export function TeamDetailReducer(
+  state = initialDetailState,
+  action: ActionTypes
+): iTeamDetailState {
+  switch (action.type) {
+    case FETCHING_TEAM_DETAIL: {
+      return {
+        ...state,
+        fetching: true
+      };
+    }
+    case FETCH_TEAM_DETAIL: {
+      return {
+        teamDetail: action.payload.teamDetail,
         fetching: false
       };
     }

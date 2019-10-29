@@ -1,18 +1,20 @@
 import axios from 'axios';
 import { Action } from 'redux';
-import { Conference, Team } from 'redux-store/_types';
+import { Conference, RosterDetail, Team } from 'redux-store/_types';
 import { ThunkAction } from 'redux-thunk';
 import { AppState } from './redux-store';
 import {
   fetchedConferences,
+  fetchedTeamDetail,
   fetchedTeams,
   fetchingConferences,
+  fetchingTeamDetail,
   fetchingTeams,
   networkError
 } from './redux-store/actions';
 
-/**The API was hacked during the development of this app (https://twitter.com/CFB_Data/status/1188197347618103298)
- * so most of the time it was down; I had to use this data as fallback */
+// The API was hacked during the development of this app (https://twitter.com/CFB_Data/status/1188197347618103298)
+// so most of the time it was down; I had to use this data as fallback
 // import fallbackTeams from './redux-store/fallback-teams.json';
 // import fallbackConfs from './redux-store/fallback-conferences.json';
 
@@ -34,6 +36,24 @@ export const thunkFetchTeams = (
       filteredTeams: teams,
       fetching: false,
       conference: conference
+    })
+  );
+};
+
+/**
+ * Returns a team's detail fetched from the collegefootballdata api.
+ * @param conference the team id
+ */
+export const thunkFetchTeamDetail = (
+  id: string
+): ThunkAction<void, AppState, null, Action<string>> => async dispatch => {
+  dispatch(fetchingTeamDetail());
+  const teamDetail = await fetchTeamDetail(id);
+
+  dispatch(
+    fetchedTeamDetail({
+      teamDetail,
+      fetching: false
     })
   );
 };
@@ -70,6 +90,17 @@ function fetchTeams(conference?: string): Promise<Team[]> {
     .get(`${apiUrl}teams`, { params: { conference } })
     .then(response => response.data);
 }
+
+/**
+ * Axios fetch team detail
+ * @param id: the team id
+ */
+function fetchTeamDetail(id: string): Promise<RosterDetail[]> {
+  return axios
+    .get(`${apiUrl}roster`, { params: { team: encodeURI(id) } })
+    .then(response => response.data);
+}
+
 /**
  * Axios fetch
  */

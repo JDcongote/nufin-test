@@ -26,7 +26,7 @@ const Item = ({ title, items, button, image, highlightColor }: ItemProps) => {
       </div>
       <div className="item__content">
         <aside className="logo">
-          <img className="logo-image" src={image}></img>
+          <img className="logo-image" src={image ? image : placeholder}></img>
         </aside>
         <table className="detail">
           <tbody>

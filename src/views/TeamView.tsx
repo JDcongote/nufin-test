@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { ConferenceReducer } from 'redux-store/reducers/_conference-reducer';
-import { TeamReducer } from 'redux-store/reducers/_team-reducer';
 import { iConferencesState, iTeamsState, Team } from 'redux-store/_types';
 import Button from '../components/Common/Button';
 import Item, { ItemData } from '../components/Common/Item';
@@ -21,8 +19,9 @@ type Props = {
 type State = {
   selectedTeam: Team | undefined;
   loading: boolean;
-  conferenceReducer: typeof ConferenceReducer;
-  teamReducer: typeof TeamReducer;
+  conferenceReducer: iConferencesState;
+  teamReducer: iTeamsState;
+  scrolled: boolean;
 };
 
 const mapStateToProps = (state: State) => ({
@@ -117,7 +116,7 @@ class TeamView extends React.PureComponent<Props, State> {
               <Button
                 onClick={this.onSelectTeam.bind(this)}
                 context={item}
-                text="Details"
+                text="Roster"
               ></Button>
             }
           ></Item>
