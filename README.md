@@ -1,6 +1,6 @@
 # nufin-test
 
-Frontend Engineer test for Nufin Germany by Juan Diego Congote García [email](mailto:jdcongote@gmail.com)
+Frontend Engineer test for Nufin by Juan Diego Congote García [email](mailto:jdcongote@gmail.com)
 
 IMPORTANT: You can find the compiled app inside: https://github.com/JDcongote/nufin-test/tree/master/dist
 
