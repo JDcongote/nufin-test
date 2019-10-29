@@ -28,9 +28,19 @@ export function TeamReducer(
       };
     }
     case FETCHED_TEAMS: {
+      const teams = [...state.teams, ...action.payload.teams];
+      teams.sort((a, b) => {
+        if (a.school < b.school) {
+          return -1;
+        }
+        if (a.school > b.school) {
+          return 1;
+        }
+        return 0;
+      });
       return {
-        teams: [...state.teams, ...action.payload.teams],
-        filteredTeams: [...state.teams, ...action.payload.teams],
+        teams: teams,
+        filteredTeams: teams,
         fetching: false
       };
     }

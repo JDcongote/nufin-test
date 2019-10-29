@@ -136,9 +136,19 @@ class TeamView extends React.PureComponent<Props, State> {
    * Create the filter facets
    */
   createFilters(): tFilter[] {
-    return this.props.conferenceStore.conferences.map(item => {
+    const filters = this.props.conferenceStore.conferences.map(item => {
       return { id: item.abbreviation, name: item.name };
     });
+    filters.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
+    return filters;
   }
 
   render() {
