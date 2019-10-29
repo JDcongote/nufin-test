@@ -9,6 +9,18 @@ import {
 
 const teams = [
   {
+    id: 100,
+    school: 'Deathwish',
+    mascot: 'Little Deathwish',
+    abbreviation: 'D',
+    altNames: [],
+    conference: 'Super League 1',
+    division: 'Division 2',
+    color: '#0257DA',
+    altColor: '#A02D68',
+    logos: ['http://a.espncdn.com/i/teamlogos/ncaa/500/24.png']
+  },
+  {
     id: 98,
     school: 'The Pitbulls',
     mascot: 'Little Pitbull',
@@ -31,34 +43,23 @@ const teams = [
     color: '#5C22AB',
     altColor: '#08342B',
     logos: ['http://a.espncdn.com/i/teamlogos/ncaa/500/2026.png']
-  },
-  {
-    id: 100,
-    school: 'Deathwish',
-    mascot: 'Little Deathwish',
-    abbreviation: 'D',
-    altNames: [],
-    conference: 'Super League 1',
-    division: 'Division 2',
-    color: '#0257DA',
-    altColor: '#A02D68',
-    logos: ['http://a.espncdn.com/i/teamlogos/ncaa/500/24.png']
   }
 ];
 
 const conferences = [
-  {
-    id: 1,
-    name: 'Kids League 1',
-    shortName: 'K1',
-    abbreviation: 'KL1'
-  },
   {
     id: 2,
     name: 'Ultra League 1',
     shortName: 'U1',
     abbreviation: 'UL1'
   },
+  {
+    id: 1,
+    name: 'Kids League 1',
+    shortName: 'K1',
+    abbreviation: 'KL1'
+  },
+
   {
     id: 3,
     name: 'Super League 1',
@@ -77,6 +78,15 @@ describe('App', () => {
       type: FETCH_CONFERENCES,
       payload: { conferences: conferences, fetching: false }
     });
+    conferences.sort((a, b) => {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
     expect(newState).toEqual({ conferences, fetching: false });
   });
   it('Fetch Teams', () => {
@@ -89,6 +99,15 @@ describe('App', () => {
     const newState = TeamReducer(initialState, {
       type: FETCHED_TEAMS,
       payload: { filteredTeams: teams, teams: teams, fetching: false }
+    });
+    teams.sort((a, b) => {
+      if (a.school < b.school) {
+        return -1;
+      }
+      if (a.school > b.school) {
+        return 1;
+      }
+      return 0;
     });
     expect(newState).toEqual({ filteredTeams: teams, teams, fetching: false });
   });
