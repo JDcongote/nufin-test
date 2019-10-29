@@ -22,8 +22,18 @@ export function ConferenceReducer(
       };
     }
     case FETCH_CONFERENCES: {
+      const conferences = [...state.conferences, ...action.payload.conferences];
+      conferences.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
       return {
-        conferences: [...state.conferences, ...action.payload.conferences],
+        conferences,
         fetching: false
       };
     }
