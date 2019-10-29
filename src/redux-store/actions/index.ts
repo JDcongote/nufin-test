@@ -13,7 +13,8 @@ import {
   iTeamDetailState,
   iTeamsState,
   NETWORK_ERROR,
-  Team
+  Team,
+  FETCH_BY_CONFERENCE_ONLY
 } from '../_types';
 
 export function fetchingTeams(): ActionTypes {
@@ -25,6 +26,13 @@ export function fetchingTeams(): ActionTypes {
 export function fetchedTeams(teams: iTeamsState): ActionTypes {
   return {
     type: FETCHED_TEAMS,
+    payload: teams
+  };
+}
+
+export function fetchByConferenceOnly(teams: iTeamsState): ActionTypes {
+  return {
+    type: FETCH_BY_CONFERENCE_ONLY,
     payload: teams
   };
 }

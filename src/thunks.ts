@@ -10,7 +10,8 @@ import {
   fetchingConferences,
   fetchingTeamDetail,
   fetchingTeams,
-  networkError
+  networkError,
+  fetchByConferenceOnly
 } from './redux-store/actions';
 
 // The API was hacked during the development of this app (https://twitter.com/CFB_Data/status/1188197347618103298)
@@ -32,6 +33,26 @@ export const thunkFetchTeams = (
 
   dispatch(
     fetchedTeams({
+      teams,
+      filteredTeams: teams,
+      fetching: false,
+      conference: conference
+    })
+  );
+};
+
+/**
+ * Returns teams fetched from the collegefootballdata api.
+ * @param conference optional: the conference to fetch teams from, if left empty this will return teams beloning to no conference
+ */
+export const thunkFetchTeamsByConference = (
+  conference?: string
+): ThunkAction<void, AppState, null, Action<string>> => async dispatch => {
+  dispatch(fetchingTeams());
+  const teams = await fetchTeams(conference);
+
+  dispatch(
+    fetchByConferenceOnly({
       teams,
       filteredTeams: teams,
       fetching: false,

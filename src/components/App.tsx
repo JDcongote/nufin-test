@@ -7,9 +7,17 @@ import {
   iTeamsState
 } from 'redux-store/_types';
 import { AppState } from '../redux-store';
-import { fetchedConferences, fetchedTeams } from '../redux-store/actions/';
+import {
+  fetchedConferences,
+  fetchedTeams,
+  fetchByConferenceOnly
+} from '../redux-store/actions/';
 import '../styles/index.scss';
-import { thunkFetchConferences, thunkFetchTeams } from '../thunks';
+import {
+  thunkFetchConferences,
+  thunkFetchTeams,
+  thunkFetchTeamsByConference
+} from '../thunks';
 import ConferenceView from '../views/ConferenceView';
 import TeamView from '../views/TeamView';
 import Header from './Header/Header';
@@ -18,6 +26,7 @@ import Loader from './Common/Loader';
 type Props = {
   thunkFetchTeams: any;
   thunkFetchConferences: any;
+  thunkFetchTeamsByConference: any;
   teams: iTeamsState;
   conferences: iConferencesState;
   loading: boolean;
@@ -66,6 +75,14 @@ class App extends React.PureComponent<Props> {
   }
 
   /**
+   * Given a conference, fetch all teams belonging to it.
+   * @param conferences
+   */
+  fetchTeamsByConference(conf: string) {
+    this.props.thunkFetchTeamsByConference(conf);
+  }
+
+  /**
    * Update app after fetching teams
    * @param prevProps
    */
@@ -91,6 +108,11 @@ class App extends React.PureComponent<Props> {
     this.setState({ page: item.id });
   }
 
+  onConferenceSelect(conf: string) {
+    this.fetchTeamsByConference(conf);
+    this.setState({ page: 'teams' });
+  }
+
   render() {
     let content;
     if (this.props.loading && !this.state.error) {
@@ -114,6 +136,7 @@ class App extends React.PureComponent<Props> {
           {this.state.page === 'conferences' && (
             <ConferenceView
               conferences={this.state.conferences}
+              onConferenceSelect={this.onConferenceSelect.bind(this)}
             ></ConferenceView>
           )}
         </React.Fragment>
@@ -130,5 +153,12 @@ class App extends React.PureComponent<Props> {
 // connect context provider to State
 export default connect(
   mapStateToProps,
-  { fetchedTeams, fetchedConferences, thunkFetchTeams, thunkFetchConferences }
+  {
+    fetchedTeams,
+    fetchedConferences,
+    fetchByConferenceOnly,
+    thunkFetchTeams,
+    thunkFetchConferences,
+    thunkFetchTeamsByConference
+  }
 )(App);

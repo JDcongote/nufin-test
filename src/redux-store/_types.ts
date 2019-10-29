@@ -6,6 +6,7 @@ export const FETCHED_TEAMS = 'FETCHED_TEAMS';
 export const FILTER_TEAMS = 'FILTER_TEAMS';
 export const FETCH_TEAM_DETAIL = 'FETCH_TEAM_DETAIL';
 export const FETCHING_TEAM_DETAIL = 'FETCHING_TEAM_DETAIL';
+export const FETCH_BY_CONFERENCE_ONLY = 'FETCH_BY_CONFERENCE_ONLY';
 
 export const NETWORK_ERROR = 'NETWORK_ERROR';
 
@@ -51,6 +52,11 @@ type FetchingTeamsAction = {
 };
 type FetchedTeamsAction = {
   type: typeof FETCHED_TEAMS;
+  payload: iTeamsState;
+};
+
+type FetchByConferenceOnly = {
+  type: typeof FETCH_BY_CONFERENCE_ONLY;
   payload: iTeamsState;
 };
 
@@ -129,5 +135,6 @@ export type ActionTypes =
   | FetchingTeamsAction
   | FetchedTeamsAction
   | FilterTeamsAction
+  | FetchByConferenceOnly
   | FetchingTeamDetailAction
   | FetchTeamDetailAction;

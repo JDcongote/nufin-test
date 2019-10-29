@@ -3,6 +3,7 @@ import {
   FETCHED_TEAMS,
   FETCHING_TEAMS,
   FETCHING_TEAM_DETAIL,
+  FETCH_BY_CONFERENCE_ONLY,
   FETCH_TEAM_DETAIL,
   FILTER_TEAMS,
   iTeamDetailState,
@@ -29,6 +30,23 @@ export function TeamReducer(
     }
     case FETCHED_TEAMS: {
       const teams = [...state.teams, ...action.payload.teams];
+      teams.sort((a, b) => {
+        if (a.school < b.school) {
+          return -1;
+        }
+        if (a.school > b.school) {
+          return 1;
+        }
+        return 0;
+      });
+      return {
+        teams: teams,
+        filteredTeams: teams,
+        fetching: false
+      };
+    }
+    case FETCH_BY_CONFERENCE_ONLY: {
+      const teams = action.payload.teams;
       teams.sort((a, b) => {
         if (a.school < b.school) {
           return -1;
