@@ -1,6 +1,6 @@
 # react-boilerplate
 
-IMPORTANT: You can find the compiled example app inside: https://github.com/JDcongote/nufin-test/tree/master/dist
+IMPORTANT: You can find the compiled example app inside: https://github.com/JDcongote/react-boilerplate/tree/master/dist
 
 # installation
 
